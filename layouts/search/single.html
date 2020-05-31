@@ -1,0 +1,100 @@
+{{ define "main" }}
+<main class="content-page container pt-7 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {{ .Content }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="search-input-wrap">
+                    <form id="search-form" method="get" action="">
+                        <input id="search" name="q" type="text" />
+                        <br>
+                        <button id="search-button" type="submit" class="button">Search</button>
+                        <a id="search-clear" href="/search/">Clear</a>
+                    </form>
+                </div>
+                <br>
+                <div id="app-search" class="row listrecent"></div>
+            </div>
+        </div>
+        <div id="app-search" class="row listrecent"></div>
+
+        <script src="{{ .Site.BaseURL }}js/lunr.js"></script>
+        <div class="row">
+            {{ $p := slice }}
+            {{ range (where .Site.RegularPages "Section" "==" "post") }}
+            {{ $.Scratch.Set "image" .RelPermalink }}
+            {{ $.Scratch.Add "image" (index .Params.images 0) }}
+            {{ $post := dict "link" .RelPermalink "author" (index .Params.authors 0) "tags" .Params.tags "title" .Title "date" (.Params.date.Format "January 2, 2006") "image" ($.Scratch.Get "image") "content" (substr .Plain 0 200) -}}
+            {{ $p = $p | append $post -}}
+            {{ end }}
+            {{ $p | jsonify }}
+        </div>
+        <script>
+
+const posts = JSON.parse(
+    {{ $p | jsonify }}
+  );
+  const query = new URLSearchParams(window.location.search);
+  const searchString = query.get('q');
+  document.querySelector('#search').value = searchString;
+  const $target = document.querySelector('#app-search');
+
+  // Our index uses title as a reference
+  const postsByTitle = posts.reduce((acc, curr) => {
+    acc[curr.title] = curr;
+    return acc;
+  }, {});
+
+  fetch('/search-index.json').then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    const index = lunr.Index.load(data);
+    const matches = index.search(searchString);
+    const matchPosts = [];
+    matches.forEach((m) => {
+      matchPosts.push(postsByTitle[m.ref]);
+    });
+    matchPosts[0].tags.forEach(p => {console.log(p)})
+    console.log(matchPosts[0].tags)
+    try {
+      $target.innerHTML = matchPosts.map(p => {
+          return `<br><div class="col-lg-4 col-md-6 mb-30px card-group">
+            <div class="card h-100">
+                <div class="maxthumb">
+                    <a href="${p.link}">
+                          <img class="img-fluid" src="${p.image}" alt="An thumbnail image.">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title"><a class="text-dark" href="${p.link}">${p.title}</a></h2>
+                    <h5 class="card-text">${p.content}...</h5>
+                </div>
+                <div style="padding-right: 10px; padding-left: 10px;" class=>
+                ${
+                  p.tags.map(function (tag) {
+                  return "<span style='white-space: nowrap;'>" + '<i class="fas fa-tag mr-2" style="margin-right: 4px !important; font-size: 0.8em !important;"></i>' + tag + " </span>"}).join('')
+                }
+              </div>
+                    <div class="wrapfooter">
+                        <span class="author-meta">
+                        <span class="post-name"><a href="/author/${p.authorurlized}">${p.author}</a></span><br/>
+                        <span class="post-date">${p.date}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+      }).join('');
+    } catch(TypeError) {
+      $target.innerHTML = `<div>No search results found.</div>`;
+      console.error(TypeError)
+    }
+  });
+  </script>
+    </div>
+</main>
+{{ end }}

@@ -1,0 +1,10 @@
+<div class="card h-100" data-aos="zoom-in">
+    {{ $page := . }}
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    <a href="{{ $page.RelPermalink }}" class="d-block">
+        <div class="card-body">
+            <h4 class="card-title"><i class="fas fa-tag mr-2"></i>{{ $name }}</h4>
+        </div>
+    </a>
+    {{ end }}
+</div>
