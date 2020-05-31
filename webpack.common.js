@@ -8,7 +8,7 @@ module.exports = {
   devtool: "source-map",
   entry: path.resolve(__dirname, "src/main.js"),
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "static/dist"),
   },
   module: {
     rules: [
@@ -21,7 +21,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: ["dist/*"],
+      cleanAfterEveryBuildPatterns: ["static/dist/*"],
     }),
     new AssetsPlugin({
       filename: "assets.json",

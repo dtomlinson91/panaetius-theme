@@ -9,13 +9,27 @@
     "js": "2.lazyload.1168fc21175de558d316.min.js"
   },
   "main": {
-    "css": "main.8d8f975136c9cc17a7c6.min.css",
-    "js": "main.5f5dabd521a484e6869a.min.js"
+    "css": "main.d1dadd1111775dfca1b1.min.css",
+    "js": "main.0de3305519cc1270072a.min.js"
   },
   "vendors~app": {
     "js": "4.vendors~app.5fe693a38fabc29c6181.min.js"
   },
   "vendors~bootstrap": {
     "js": "5.vendors~bootstrap.ebc6358ec2d8424a6fb0.min.js"
+  },
+  "": {
+    "ttf": [
+      "1ca584c47210c1b86d10754c325ad62b.ttf",
+      "2dcef7a784f8318ced92b5b4047fa1f5.ttf",
+      "3a17dce21bdbd88122a2112e60b23a2f.ttf",
+      "b46321476d5515714322049f81d5fb3f.ttf",
+      "bcb8e5ce3b17c1e244d2725cf8e55234.ttf",
+      "df62a7a90f92924e3a685b68d5a49361.ttf"
+    ],
+    "otf": [
+      "21c63a34ea5e74584751e3b6618d29de.otf",
+      "cf6ea537acbd7e39208334261f95783e.otf"
+    ]
   }
 }

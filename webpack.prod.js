@@ -6,7 +6,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizer = require("optimize-css-assets-webpack-plugin");
 const PurgeCssPlugin = require("purgecss-webpack-plugin");
 const glob = require("glob");
-const path = require("path")
+const path = require("path");
 
 module.exports = merge(common, {
   mode: "production",
@@ -14,7 +14,7 @@ module.exports = merge(common, {
   output: {
     filename: "[name].[contenthash].min.js",
     chunkFilename: "[id].[name].[contenthash].min.js",
-    publicPath: "dist/",
+    publicPath: "/dist/",
   },
   module: {
     rules: [
@@ -27,6 +27,10 @@ module.exports = merge(common, {
           "postcss-loader",
           "sass-loader",
         ],
+      },
+      {
+        test: /\.(ttf|otf)$/,
+        use: ["file-loader"],
       },
     ],
   },
