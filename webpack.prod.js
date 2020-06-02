@@ -4,9 +4,10 @@ const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizer = require("optimize-css-assets-webpack-plugin");
-const PurgeCssPlugin = require("purgecss-webpack-plugin");
-const glob = require("glob");
-const path = require("path");
+// const PurgeCssPlugin = require("purgecss-webpack-plugin");
+// const whitelister = require("purgecss-whitelister");
+// const glob = require("glob-all");
+// const path = require("path");
 
 module.exports = merge(common, {
   mode: "production",
@@ -41,11 +42,17 @@ module.exports = merge(common, {
       sourceMap: true,
     }),
     new webpack.HashedModuleIdsPlugin(),
-    new PurgeCssPlugin({
-      paths: glob.sync(path.join(__dirname, "layouts") + "/**/*.html", {
-        nodir: true,
-      }),
-    }),
+    // new PurgeCssPlugin({
+    //   paths: glob.sync([path.join(__dirname, "layouts") + "/**/*.html"], {
+    //     nodir: true,
+    //   }),
+    //   whitelistPatterns: [/zoom/, /aos/, /table/, /thead/, /blockquote/, /img-fluid/, /code/, /highlight/],
+    //   whitelistPatternsChildren: [/code/, /highlight/],
+    //   whitelist: [
+    //     whitelister("node_modules/aos/dist/aos.css"),
+    //     whitelister("node_modules/bootstrap/dist/css/bootstrap.css")
+    //   ],
+    // }),
   ],
   optimization: {
     minimize: true,

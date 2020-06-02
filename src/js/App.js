@@ -1,6 +1,7 @@
 "use strict";
 
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
+// import AOS from "aos";
 
 import {
   faBookOpen,
@@ -70,7 +71,6 @@ export default {
     $(".content table").addClass("table");
     $(".content table").wrap('<div class="table-responsive" />');
     $(".content table thead").addClass("thead-dark");
-    $(".content pre").wrap('<figure class="highlight" />');
     $(".content figure > img").addClass("img-fluid");
   },
   lazyload: async () => {
@@ -99,5 +99,9 @@ export default {
 
       $position = $scroll;
     });
+  },
+  aos: () => {
+    var AOS = require("aos");
+    AOS.init({ duration: 1000, once: false, useClassNames: true });
   },
 };

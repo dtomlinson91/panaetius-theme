@@ -9,4 +9,5 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.lazyload();
   App.loadFontAwesome();
   App.navbarFade();
+  App.aos();
 });
