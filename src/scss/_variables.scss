@@ -17,13 +17,18 @@ $light: $white;
 $dark: $gray-900;
 $headings-color: $gray-900;
 // $headings-font-family: 'Open Sans', sans-serif;
-$headings-font-family: "RNSSanz", sans-serif;
-$headings-font-weight: 400;
+$headings-font-family: "Rotunda", sans-serif;
+$headings-font-weight: 600;
 
 // $font-family-sans-serif: 'Roboto', sans-serif;
-$font-family-sans-serif: "RNSSanz", sans-serif;
-$font-family-monospace: "BergenMono", monospace;
+$font-family-sans-serif: "Rotunda", sans-serif;
+$font-family-monospace: "Realtime", monospace;
 $font-family-serif: "Roboto Slab", serif;
+
+$font-weight-normal: 400;
+$font-weight-base: 400;
+
+$code-font-size: 100%;
 
 $link-color: $gray-800;
 $link-decoration: underline;

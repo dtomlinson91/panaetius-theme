@@ -1,3 +1,5 @@
+// RNSSanz
+
 @font-face {
     font-family: "RNSSanz";
     src: url("../../src/fonts/RNSSanz/RNSSanz-Light.ttf");
@@ -7,7 +9,7 @@
 
 @font-face {
     font-family: "RNSSanz";
-    src: url("../../src/fonts/RNSSanz/RNSSanz-Medium.ttf");
+    src: url("../../src/fonts/RNSSanz/RNSSanz-Normal.ttf");
     font-display: swap;
 }
 
@@ -46,6 +48,8 @@
     font-display: swap;
 }
 
+// BergenMono
+
 @font-face {
     font-family: "BergenMono";
     src: url("../../src/fonts/BergenMono/BergenMono-Regular.otf");
@@ -55,6 +59,121 @@
 @font-face {
     font-family: "BergenMono";
     src: url("../../src/fonts/BergenMono/BergenMono-Bold.otf");
+    font-weight: 700;
+    font-display: swap;
+}
+
+// Liber
+
+@font-face {
+    font-family: "Liber";
+    src: url("../../src/fonts/Liber/normal/LiberGrotesqueFamily-Light.ttf");
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Liber";
+    src: url("../../src/fonts/Liber/normal/LiberGrotesqueFamily-Regular.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Liber";
+    src: url("../../src/fonts/Liber/normal/LiberGrotesqueFamily-News.ttf");
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Liber";
+    src: url("../../src/fonts/Liber/normal/LiberGrotesqueFamily-SemiBold.ttf");
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Liber";
+    src: url("../../src/fonts/Liber/normal/LiberGrotesqueFamily-Bold.ttf");
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Liber";
+    src: url("../../src/fonts/Liber/normal/LiberGrotesqueFamily-ExtBd.ttf");
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Liber";
+    src: url("../../src/fonts/Liber/normal/LiberGrotesqueFamily-Black.ttf");
+    font-weight: 900;
+    font-display: swap;
+}
+
+// Rotunda
+
+@font-face {
+    font-family: "Rotunda";
+    src: url("../../src/fonts/Rotunda/normal/Rotunda-Light.otf");
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rotunda";
+    src: url("../../src/fonts/Rotunda/normal/Rotunda-Regular.otf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rotunda";
+    src: url("../../src/fonts/Rotunda/normal/Rotunda-Medium.otf");
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rotunda";
+    src: url("../../src/fonts/Rotunda/normal/Rotunda-Bold.otf");
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rotunda";
+    src: url("../../src/fonts/Rotunda/normal/Rotunda-ExtraBold.otf");
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rotunda";
+    src: url("../../src/fonts/Rotunda/normal/Rotunda-Black.otf");
+    font-weight: 900;
+    font-display: swap;
+}
+
+// Realtime
+
+@font-face {
+    font-family: "Realtime";
+    src: url("../../src/fonts/Realtime/Realtime.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Realtime";
+    src: url("../../src/fonts/Realtime/Realtime\ Semibold.ttf");
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Realtime";
+    src: url("../../src/fonts/Realtime/Realtime\ Bold.ttf");
     font-weight: 700;
     font-display: swap;
 }
