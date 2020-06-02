@@ -3,33 +3,50 @@
     "js": "0.vendors~app~bootstrap.e59019bd2c01f8f5dd1c.min.js"
   },
   "app": {
-    "js": "1.app.560974f2ae70ee78fbb4.min.js"
+    "js": "1.app.834f930bdebebc2f70d8.min.js"
   },
   "lazyload": {
     "js": "2.lazyload.1168fc21175de558d316.min.js"
   },
   "main": {
-    "css": "main.d1dadd1111775dfca1b1.min.css",
-    "js": "main.0de3305519cc1270072a.min.js"
+    "css": "main.a0900cfd15ab0dece008.min.css",
+    "js": "main.de04e43a25a1ed226095.min.js"
   },
   "vendors~app": {
-    "js": "4.vendors~app.5fe693a38fabc29c6181.min.js"
+    "js": "4.vendors~app.7827f3b332495242afbd.min.js"
   },
   "vendors~bootstrap": {
     "js": "5.vendors~bootstrap.ebc6358ec2d8424a6fb0.min.js"
   },
   "": {
     "ttf": [
+      "021b3e211ded6e972e9ba474b2cb4573.ttf",
+      "04724d2e2db37d9c8a7f703fe0684dd9.ttf",
       "1ca584c47210c1b86d10754c325ad62b.ttf",
+      "27c396ac5836c7f7fd00e3aedcd99215.ttf",
       "2dcef7a784f8318ced92b5b4047fa1f5.ttf",
       "3a17dce21bdbd88122a2112e60b23a2f.ttf",
+      "4171eb82bb636c140740373e4acc3b2a.ttf",
+      "6272fc06ecc2b62ed051b0eef8725925.ttf",
+      "71634e474a9cfb7eab5274863c1bd8a2.ttf",
+      "760dba1bf826832f3b07b2d4c7241b8a.ttf",
+      "899056ade3ffeacf675bad2277a656d4.ttf",
+      "a8a344d7450bc557f7a50604c9f4bed3.ttf",
       "b46321476d5515714322049f81d5fb3f.ttf",
+      "bb614a05a54bef898f8d3f82bcc8db7f.ttf",
       "bcb8e5ce3b17c1e244d2725cf8e55234.ttf",
-      "df62a7a90f92924e3a685b68d5a49361.ttf"
+      "df62a7a90f92924e3a685b68d5a49361.ttf",
+      "f27fc54c04fd4b4af6bd48f0212b2899.ttf"
     ],
     "otf": [
       "21c63a34ea5e74584751e3b6618d29de.otf",
-      "cf6ea537acbd7e39208334261f95783e.otf"
+      "24c02c2da1baa988ddb2caf14ede74d9.otf",
+      "3321156dec45868197d67215230885e9.otf",
+      "499a5eb1414ca841c6b106f94bd628de.otf",
+      "6453e1009e3c31245630943f07ce9c84.otf",
+      "a88fa636656948bd2edb86bce59f0eec.otf",
+      "cf6ea537acbd7e39208334261f95783e.otf",
+      "da9fb05ff6c5f02b52f5b416cfe61d39.otf"
     ]
   }
 }
