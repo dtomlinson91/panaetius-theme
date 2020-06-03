@@ -1,22 +1,22 @@
 {
   "vendors~app~bootstrap": {
-    "js": "0.vendors~app~bootstrap.bd4fea18b85f7ddb1195.min.js"
+    "js": "0.vendors~app~bootstrap.e59019bd2c01f8f5dd1c.min.js"
   },
   "app": {
-    "js": "1.app.7d1012a9f28124000a5c.min.js"
+    "js": "1.app.834f930bdebebc2f70d8.min.js"
   },
   "lazyload": {
-    "js": "2.lazyload.e68c0e7aa63c9d88656d.min.js"
+    "js": "2.lazyload.1168fc21175de558d316.min.js"
   },
   "main": {
     "css": "main.ae4b40cfcfad476e0b36.min.css",
-    "js": "main.7a1674c4bebdd5e62d59.min.js"
+    "js": "main.de04e43a25a1ed226095.min.js"
   },
   "vendors~app": {
-    "js": "4.vendors~app.7cbc36c4a1dc719459c6.min.js"
+    "js": "4.vendors~app.7827f3b332495242afbd.min.js"
   },
   "vendors~bootstrap": {
-    "js": "5.vendors~bootstrap.d04ad02d3f6f3b1170fa.min.js"
+    "js": "5.vendors~bootstrap.ebc6358ec2d8424a6fb0.min.js"
   },
   "": {
     "ttf": [
