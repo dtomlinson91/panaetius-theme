@@ -22,7 +22,7 @@
         </div>
         <div id="app-search" class="row listrecent"></div>
 
-        <script src="{{ .Site.BaseURL }}js/lunr.js"></script>
+
         <div class="row">
             {{ $p := slice }}
             {{ range (where .Site.RegularPages "Section" "==" "post") }}
@@ -33,8 +33,8 @@
             {{ end }}
             {{ $p | jsonify }}
         </div>
-        <script>
-
+        <script src="{{ print "dist/" "lunr.b93de9e9609074d666f5123e866e25ed..min.js" | relURL }}"></script>
+<script>
 const posts = JSON.parse(
     {{ $p | jsonify }}
   );
