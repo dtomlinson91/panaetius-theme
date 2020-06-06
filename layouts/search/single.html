@@ -8,14 +8,22 @@
         </div>
         <div class="row">
             <div class="col">
-                <div class="search-input-wrap">
+              <form id="search-form" method="get" action="/search" method="POST" class="form-inline">
+                <input type="text" name="q" id="search" class="form-control" placeholder="Search" style="width: 20%;">
+                <div class="input-group">
+                <div class="input-group-append">
+                <button type="submit" id="search-button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                </div>
+              </form>
+              </div>
+              <!-- <div class="search-input-wrap">
                     <form id="search-form" method="get" action="">
                         <input id="search" name="q" type="text" />
                         <br>
                         <button id="search-button" type="submit" class="button">Search</button>
                         <a id="search-clear" href="/search/">Clear</a>
                     </form>
-                </div>
+                </div> -->
                 <br>
                 <div id="app-search" class="row listrecent"></div>
             </div>
@@ -33,12 +41,13 @@
             {{ end }}
             {{ $p | jsonify }}
         </div>
-        <script src="{{ print "dist/" "lunr.b93de9e9609074d666f5123e866e25ed..min.js" | relURL }}"></script>
+        <script src="{{ print "dist/" "lunr.b93de9e9609074d666f5123e866e25ed.min.js" | relURL }}"></script>
 <script>
 const posts = JSON.parse(
     {{ $p | jsonify }}
   );
   const query = new URLSearchParams(window.location.search);
+  console.log(query)
   const searchString = query.get('q');
   document.querySelector('#search').value = searchString;
   const $target = document.querySelector('#app-search');
