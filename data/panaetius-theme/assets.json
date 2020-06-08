@@ -3,14 +3,14 @@
     "js": "0.vendors~app~bootstrap.e59019bd2c01f8f5dd1c.min.js"
   },
   "app": {
-    "js": "1.app.834f930bdebebc2f70d8.min.js"
+    "js": "1.app.0171dc68e616d119970d.min.js"
   },
   "lazyload": {
     "js": "2.lazyload.1168fc21175de558d316.min.js"
   },
   "main": {
-    "css": "main.8722ce3e6e2f5196027f.min.css",
-    "js": "main.de04e43a25a1ed226095.min.js"
+    "css": "main.651bb1fef802c68b6843.min.css",
+    "js": "main.48637aff6f96e597ae05.min.js"
   },
   "vendors~app": {
     "js": "4.vendors~app.7827f3b332495242afbd.min.js"

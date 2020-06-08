@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.bootstrapify();
   App.lazyload();
   App.loadFontAwesome();
-  App.navbarFade();
+  // App.navbarFade();
   App.aos();
+  App.scrollBar();
 });

@@ -104,4 +104,15 @@ export default {
     var AOS = require("aos");
     AOS.init({ duration: 1000, once: false, useClassNames: true });
   },
+  scrollBar: () => {
+    $(window).on("load scroll resize", function () {
+      let top = $(window).scrollTop();
+      let height = $(document).height();
+      let windowheight = $(window).height();
+      let width = (top / (height - windowheight)) * 100;
+      $("#line-scroll").css({
+        width: width + "%",
+      });
+    });
+  },
 };
