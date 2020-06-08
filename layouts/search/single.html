@@ -1,22 +1,25 @@
 {{ define "main" }}
+{{ .Scratch.Set "IsSingle" true }}
 <main class="content-page container pt-7 pb-5">
     <div class="container">
         <div class="row">
             <div class="col">
-                {{ .Content }}
+                <h1>Search</h1>
             </div>
         </div>
         <div class="row">
             <div class="col">
-              <form id="search-form" method="get" action="/search" method="POST" class="form-inline">
-                <input type="text" name="q" id="search" class="form-control" placeholder="Search" style="width: 20%;">
-                <div class="input-group">
-                <div class="input-group-append">
-                <button type="submit" id="search-button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                <div class="d-flex justify-content-center">
+                    <form id="search-form" method="get" action="/search" method="POST" class="form-inline form-single">
+                        <input type="text" name="q" id="search" class="form-control form-control-sm" placeholder="Search">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <button type="submit" id="search-button" class="btn btn-primary" style="margin-left: -5px;"> <span class="fa fa-search form-control-feedback"></span></button>
+                            </div>
+                    </form>
                 </div>
-              </form>
-              </div>
-              <!-- <div class="search-input-wrap">
+            </div>
+            <!-- <div class="search-input-wrap">
                     <form id="search-form" method="get" action="">
                         <input id="search" name="q" type="text" />
                         <br>
@@ -24,54 +27,54 @@
                         <a id="search-clear" href="/search/">Clear</a>
                     </form>
                 </div> -->
-                <br>
-                <div id="app-search" class="row listrecent"></div>
-            </div>
+            <br>
+            <div id="app-search" class="row listrecent"></div>
         </div>
-        <div id="app-search" class="row listrecent"></div>
+    </div>
+    <div id="app-search" class="row listrecent"></div>
 
 
-        <div class="row">
-            {{ $p := slice }}
-            {{ range (where .Site.RegularPages "Section" "==" "post") }}
-            {{ $.Scratch.Set "image" .RelPermalink }}
-            {{ $.Scratch.Add "image" (index .Params.images 0) }}
-            {{ $post := dict "link" .RelPermalink "author" (index .Params.authors 0) "tags" .Params.tags "title" .Title "date" (.Params.date.Format "January 2, 2006") "image" ($.Scratch.Get "image") "content" (substr .Plain 0 200) -}}
-            {{ $p = $p | append $post -}}
-            {{ end }}
-            {{ $p | jsonify }}
-        </div>
-        <script src="{{ print "dist/" "lunr.b93de9e9609074d666f5123e866e25ed.min.js" | relURL }}"></script>
-<script>
-const posts = JSON.parse(
-    {{ $p | jsonify }}
-  );
-  const query = new URLSearchParams(window.location.search);
-  console.log(query)
-  const searchString = query.get('q');
-  document.querySelector('#search').value = searchString;
-  const $target = document.querySelector('#app-search');
+    <div class="row">
+        {{ $p := slice }}
+        {{ range (where .Site.RegularPages "Section" "==" "post") }}
+        {{ $.Scratch.Set "image" .RelPermalink }}
+        {{ $.Scratch.Add "image" (index .Params.images 0) }}
+        {{ $post := dict "link" .RelPermalink "author" (index .Params.authors 0) "tags" .Params.tags "title" .Title "date" (.Params.date.Format "January 2, 2006") "image" ($.Scratch.Get "image") "content" (substr .Plain 0 200) -}}
+        {{ $p = $p | append $post -}}
+        {{ end }}
+        {{ $p | jsonify }}
+    </div>
+    <script src="{{ print "dist/" "lunr.b93de9e9609074d666f5123e866e25ed.min.js" | relURL }}"></script>
+    <script>
+        const posts = JSON.parse({{$p | jsonify}});
+        const query = new URLSearchParams(window.location.search);
+        console.log(query)
+        const searchString = query.get('q');
+        document.querySelector('#search').value = searchString;
+        const $target = document.querySelector('#app-search');
 
-  // Our index uses title as a reference
-  const postsByTitle = posts.reduce((acc, curr) => {
-    acc[curr.title] = curr;
-    return acc;
-  }, {});
+        // Our index uses title as a reference
+        const postsByTitle = posts.reduce((acc, curr) => {
+            acc[curr.title] = curr;
+            return acc;
+        }, {});
 
-  fetch('/search-index.json').then(function (res) {
-    return res.json();
-  }).then(function (data) {
-    const index = lunr.Index.load(data);
-    const matches = index.search(searchString);
-    const matchPosts = [];
-    matches.forEach((m) => {
-      matchPosts.push(postsByTitle[m.ref]);
-    });
-    matchPosts[0].tags.forEach(p => {console.log(p)})
-    console.log(matchPosts[0].tags)
-    try {
-      $target.innerHTML = matchPosts.map(p => {
-          return `<br><div class="col-lg-4 col-md-6 mb-30px card-group">
+        fetch('/search-index.json').then(function(res) {
+            return res.json();
+        }).then(function(data) {
+            const index = lunr.Index.load(data);
+            const matches = index.search(searchString);
+            const matchPosts = [];
+            matches.forEach((m) => {
+                matchPosts.push(postsByTitle[m.ref]);
+            });
+            matchPosts[0].tags.forEach(p => {
+                console.log(p)
+            })
+            console.log(matchPosts[0].tags)
+            try {
+                $target.innerHTML = matchPosts.map(p => {
+                    return `<br><div class="col-lg-4 col-md-6 mb-30px card-group">
             <div class="card h-100">
                 <div class="maxthumb">
                     <a href="${p.link}">
@@ -97,13 +100,13 @@ const posts = JSON.parse(
                 </div>
             </div>
         </div>`;
-      }).join('');
-    } catch(TypeError) {
-      $target.innerHTML = `<div>No search results found.</div>`;
-      console.error(TypeError)
-    }
-  });
-  </script>
+                }).join('');
+            } catch (TypeError) {
+                $target.innerHTML = `<div>No search results found.</div>`;
+                console.error(TypeError)
+            }
+        });
+    </script>
     </div>
 </main>
 {{ end }}

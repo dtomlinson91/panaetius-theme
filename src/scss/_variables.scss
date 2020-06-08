@@ -11,60 +11,64 @@ $gray-700: #264d61;
 $gray-800: #0c344b;
 $gray-900: #082333;
 
+$font-grey: #343a40;
+
+$primary: #a02f2f;
+$secondary: #1B1725;
+
 $text-muted: $gray-400;
-$body-color: $gray-800;
+$body-color: $font-grey;
 $light: $white;
 $dark: $gray-900;
-$headings-color: $gray-900;
-// $headings-font-family: 'Open Sans', sans-serif;
-$headings-font-family: "Rotunda", sans-serif;
+$headings-color: $font-grey;
+$headings-font-family: "Rotunda",
+sans-serif;
 $headings-font-weight: 500;
 
-// $font-family-sans-serif: 'Roboto', sans-serif;
-$font-family-sans-serif: "Rotunda", sans-serif;
-$font-family-monospace: "Realtime", monospace;
-$font-family-serif: "Roboto Slab", serif;
+// $nav-link-disabled-color: $font-grey;
+// $nav-tabs-link-active-color: $font-grey;
+$navbar-light-color: $font-grey;
+$navbar-light-hover-color: $primary;
+$navbar-light-active-color: $primary;
+
+$font-family-sans-serif: "Rotunda",
+sans-serif;
+$font-family-monospace: "Realtime",
+monospace;
+$font-family-serif: "Roboto Slab",
+serif;
 
 $font-weight-normal: 400;
 $font-weight-base: 400;
 
 $code-font-size: 100%;
 
-$link-color: $gray-800;
-$link-decoration: underline;
+$link-color: $primary;
+$link-decoration: none;
 
 $font-size-base: 1.125rem;
 
 $headings-margin-bottom: 1.25rem;
 $paragraph-margin-bottom: 1.5rem;
 $spacer: 1.125rem;
-$spacers: (
-  0: 0,
-  1: (
-    $spacer * 0.25,
-  ),
-  2: (
-    $spacer * 0.5,
-  ),
-  3: $spacer,
-  4: (
-    $spacer * 1.5,
-  ),
-  5: (
-    $spacer * 3,
-  ),
-  6: (
-    $spacer * 5,
-  ),
-  7: (
-    $spacer * 6,
-  ),
-  8: (
-    $spacer * 7,
-  ),
-  9: (
-    $spacer * 8,
-  ),
+$spacers: (0: 0,
+    1: ($spacer * 0.25,
+    ),
+    2: ($spacer * 0.5,
+    ),
+    3: $spacer,
+    4: ($spacer * 1.5,
+    ),
+    5: ($spacer * 3,
+    ),
+    6: ($spacer * 5,
+    ),
+    7: ($spacer * 6,
+    ),
+    8: ($spacer * 7,
+    ),
+    9: ($spacer * 8,
+    ),
 );
 
 $border-radius: 0.45rem;
@@ -80,4 +84,3 @@ $navbar-padding-y: 0.4rem;
 // Overrides
 
 $body-bg: #f9f9f9;
-
