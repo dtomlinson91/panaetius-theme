@@ -1,0 +1,15 @@
+div.toc-sidebar {
+    position: fixed;
+    right: 0;
+    background-color: rgb(245,245,245);
+    height: 100%;
+    margin-top: -500%;
+    padding-top: 500%;
+    padding-bottom: 500%;
+    margin-right: 5%;
+
+    & li {
+        list-style: none;
+        padding-bottom: 5px;
+    }
+}

@@ -1,11 +1,11 @@
 {{ define "main" }}
-<main class="content-page container pt-7 pb-5">
+<main class="content-page container-fluid pt-7 pb-5">
     {{ $page := . }}
     <div class="row">
-        <div class="col">
+        <div class="col-lg-8">
             <article>
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-9">
                         <div class="meta text-muted mb-3">
                             <p class="created text-muted text-uppercase font-weight-bold mb-1">{{ $page.Date.Format "January 2, 2006" }}</p>
                             <span class="mr-2"><i class="fas fa-book-open mr-2"></i>{{ $page.WordCount }} words</span>
@@ -20,30 +20,29 @@
 
                 {{- with .Resources.Match "images/banner.svg" -}}
                 {{ range . }}
-                    <div class="row justify-content-center mb-3">
-                        <div class="col-lg-10">
-                            <img data-src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block" alt="{{ $page.Title }}" data-aos="zoom-in">
-                        </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-lg-10">
+                        <img data-src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block" alt="{{ $page.Title }}" data-aos="zoom-in">
                     </div>
+                </div>
                 {{- end -}}
                 {{- end -}}
 
                 {{- with $page.Params.tags -}}
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-9">
                         <div class="tags my-3">
                             {{- range . -}}
-                                <a class="badge badge-pill badge-light border mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-                                    <i class="fas fa-tag mr-2"></i>{{ . }}
-                                </a>
+                            <a class="badge badge-pill badge-light border mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                                <i class="fas fa-tag mr-2"></i>{{ . }}
+                            </a>
                             {{- end -}}
                         </div>
                     </div>
                 </div>
                 {{- end -}}
-
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-9">
                         <div class="content">
                             {{ $page.Content }}
                         </div>
@@ -52,21 +51,21 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        {{ template "_internal/disqus.html" . }}
-                    </div>
-                </div>
-
                 {{- if .Site.Params.commento.enable -}}
                 <div class="row justify-content-center my-3">
-                    <div class="col-lg-8">
+                    <div class="col-lg-6">
                         <div id="commento"></div>
                         <script src="{{ .Site.Params.commento.url }}"></script>
                     </div>
                 </div>
                 {{- end -}}
             </article>
+        </div>
+        <div id="" class="col-lg-2 toc-sidebar">
+            <aside>
+                <h5 class="text-center">Table of contents</h5>
+                {{ .TableOfContents }}
+            </aside>
         </div>
     </div>
 
