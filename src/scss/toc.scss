@@ -7,9 +7,23 @@ div.toc-sidebar {
     padding-top: 500%;
     padding-bottom: 500%;
     margin-right: 5%;
+    font-size: 0.9em;
+
+    & ul {
+        // margin-left: -40px;
+    }
 
     & li {
         list-style: none;
-        padding-bottom: 5px;
+        // margin-left: -38px;
+        padding-bottom: 10px;
+    }
+}
+
+#TableOfContents > ul {
+    margin-left: -40px;
+
+    & > li ul {
+        margin-left: -15px;
     }
 }
