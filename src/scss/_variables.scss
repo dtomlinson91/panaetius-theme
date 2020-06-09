@@ -11,23 +11,28 @@ $gray-700: #264d61;
 $gray-800: #0c344b;
 $gray-900: #082333;
 
-$font-grey: #343a40;
+$text-gray: #343a40;
 
 $primary: #a02f2f;
-$secondary: #1B1725;
+$secondary: #773A6B;
+
+$table-dark-color: $white;
+$table-dark-bg: $primary;
+
+
 
 $text-muted: $gray-400;
-$body-color: $font-grey;
+$body-color: $text-gray;
 $light: $white;
 $dark: $gray-900;
-$headings-color: $font-grey;
+$headings-color: $text-gray;
 $headings-font-family: "Rotunda",
 sans-serif;
 $headings-font-weight: 500;
 
-// $nav-link-disabled-color: $font-grey;
-// $nav-tabs-link-active-color: $font-grey;
-$navbar-light-color: $font-grey;
+// $nav-link-disabled-color: $text-gray;
+// $nav-tabs-link-active-color: $text-gray;
+$navbar-light-color: $text-gray;
 $navbar-light-hover-color: $primary;
 $navbar-light-active-color: $primary;
 

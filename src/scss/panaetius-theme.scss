@@ -9,7 +9,8 @@
 
 .author .name a,
 .author .social a {
-    color: $gray-900;
+    // color: $gray-900;
+    color: $text-gray;
     text-decoration: none;
 }
 
@@ -29,7 +30,7 @@ code {
 code[class*=language-], pre[class*=language-] {
     font-family: $font-family-monospace !important;
     font-weight: 600;
-    color: red;
+    // color: red;
     @include font-size($code-font-size);
 }
 
@@ -82,7 +83,7 @@ footer a:not(.icons) {
 }
 
 .navbar {
-    border-bottom: 1px solid rgb(210, 210, 214);
+    border-bottom: 1px solid #a02f2f;
 }
 
 .rotate-a-20 {
@@ -103,5 +104,15 @@ img.front-background {
 }
 
 a.navbar-brand {
-    color: $font-grey !important;
+    color: $text-gray !important;
+}
+
+// Post page
+
+div.post-info > div > p:first-child{
+    margin: 0px;
+}
+
+#navbar-brand-image {
+    transform: scale(-1.25, 1.25);
 }
