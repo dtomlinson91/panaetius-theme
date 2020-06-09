@@ -1,5 +1,7 @@
 {{- if .Params.authors -}}
 <ul class="authors list-inline">
+    <p class="text-muted">Written by</p>
+    <!-- <br> -->
     {{- range .Params.authors -}}
     {{- with $.Site.GetPage (printf "/authors/%s" (. | urlize)) -}}
     {{- $term := . -}}

@@ -5,37 +5,43 @@
     {{ $page := . }}
     <div class="row">
         <div class="col-lg-8">
+            {{- with .Resources.Match "images/banner.svg" -}}
+            {{ range . }}
+            <div class="row justify-content-center mb-3">
+                <div class="col-lg-10">
+                    <img data-src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block" alt="{{ $page.Title }}" data-aos="zoom-in">
+                </div>
+            </div>
+            {{- end -}}
+            {{- end -}}
             <article>
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
-                        <div class="meta text-muted mb-3">
-                            <p class="created text-muted text-uppercase font-weight-bold mb-1">{{ $page.Date.Format "January 2, 2006" }}</p>
-                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>{{ $page.WordCount }} words</span>
-                            <span><i class="fas fa-clock mr-2"></i>{{ $page.ReadingTime }} min read</span>
+                        <h1 class="display-3">{{ $page.Title }}</h1>
+
+                        <div class="d-flex justify-content-between  align-items-stretch post-info">
+                            <div>{{ partial "authors.html" $page }}</div>
+                            <div class="meta text-muted mb-3 d-flex flex-column justify-content-start">
+                                <div>
+                                    <p class="text-muted">Posted on:</p>
+                                </div>
+                                <div>
+                                    <p class="created text-muted text-uppercase font-weight-bold mb-1">{{ $page.Date.Format "January 2, 2006" }}</p>
+                                    <span class="mr-2"><i class="fas fa-book-open mr-2"></i>{{ $page.WordCount }} words</span>
+                                    <span><i class="fas fa-clock mr-2"></i>{{ $page.ReadingTime }} min read</span>
+                                </div>
+                            </div>
                         </div>
-
-                        <h1>{{ $page.Title }}</h1>
-
-                        {{ partial "authors.html" $page }}
                     </div>
                 </div>
 
-                {{- with .Resources.Match "images/banner.svg" -}}
-                {{ range . }}
-                <div class="row justify-content-center mb-3">
-                    <div class="col-lg-10">
-                        <img data-src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block" alt="{{ $page.Title }}" data-aos="zoom-in">
-                    </div>
-                </div>
-                {{- end -}}
-                {{- end -}}
 
                 {{- with $page.Params.tags -}}
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
                         <div class="tags my-3">
                             {{- range . -}}
-                            <a class="badge badge-pill badge-light border mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                            <a class="badge badge-dark mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
                                 <i class="fas fa-tag mr-2"></i>{{ . }}
                             </a>
                             {{- end -}}
@@ -55,7 +61,7 @@
 
                 {{- if .Site.Params.commento.enable -}}
                 <div class="row justify-content-center my-3">
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
                         <div id="commento"></div>
                         <script src="{{ .Site.Params.commento.url }}"></script>
                     </div>
@@ -63,11 +69,16 @@
                 {{- end -}}
             </article>
         </div>
-        <div id="" class="col-lg-2 toc-sidebar">
+        <div id="" class="col-lg-2 toc-sidebar d-none d-md-block">
             <aside>
                 <h5 class="text-center text-uppercase">Table of contents</h5>
-                {{ .TableOfContents }}
+                <div class="toc-contents">
+                    {{ .TableOfContents }}
+                </div>
             </aside>
+            <div class="d-flex justify-content-center">
+                <img src="/images/icons/Wizard.png" style="width: 50%;" />
+            </div>
         </div>
     </div>
 
