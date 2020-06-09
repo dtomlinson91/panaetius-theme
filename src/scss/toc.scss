@@ -1,7 +1,8 @@
 div.toc-sidebar {
     position: fixed;
     right: 0;
-    background-color: rgb(245,245,245);
+    // background-color: rgb(245,245,245);
+    background: repeating-linear-gradient(135deg, rgba(128, 50, 50, 0.05), rgba(160, 60, 60, 0.05) 5px, rgba(0,0,0,0) 5px, rgba(0,0,0,0) 10px);
     height: 100%;
     margin-top: -500%;
     padding-top: 500%;
@@ -9,13 +10,8 @@ div.toc-sidebar {
     margin-right: 5%;
     font-size: 0.9em;
 
-    & ul {
-        // margin-left: -40px;
-    }
-
     & li {
         list-style: none;
-        // margin-left: -38px;
         padding-bottom: 10px;
     }
 }
@@ -26,4 +22,9 @@ div.toc-sidebar {
     & > li ul {
         margin-left: -15px;
     }
+}
+
+div.toc-contents a {
+    // color: $text-muted
+    color: $gray-700
 }
