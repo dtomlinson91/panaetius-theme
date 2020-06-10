@@ -1,7 +1,6 @@
 {{ $current := . }}
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" id="navbar-main-menu">
     <div class="container">
-
         <a class="navbar-brand" href="{{ .Site.BaseURL }}"><img src="/images/icons/Gods.png" width="50" height="50" class="mr-3 rotate-a-20" id="navbar-brand-image" />{{ .Site.Title }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -16,10 +15,10 @@
                 <li class="nav-item{{ if or (eq $current.URL .URL) ($current.HasMenuCurrent "main" .) }} active{{ end }}"><a class="nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
                 {{ end }}
                 {{ end }}
-                <li class="nav-item" id="nav-search">
+                <li class="nav-item d-none d-md-block" id="nav-search">
                     <form id="search-form" method="get" action="/search" method="POST" class="form-inline">
                         <input type="text" name="q" id="search" class="form-control form-control-sm" placeholder="Search">
-                        <div class="input-group">
+                        <div class="input-group ">
                             <div class="input-group-append">
                                 <!-- <div> -->
                                 <button type="submit" id="search-button" class="btn btn-primary"> <i class="fa fa-search fa-sm"></i></button>
