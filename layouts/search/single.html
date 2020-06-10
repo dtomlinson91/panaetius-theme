@@ -42,7 +42,6 @@
         {{ $post := dict "link" .RelPermalink "author" (index .Params.authors 0) "tags" .Params.tags "title" .Title "date" (.Params.date.Format "January 2, 2006") "image" ($.Scratch.Get "image") "content" (substr .Plain 0 200) -}}
         {{ $p = $p | append $post -}}
         {{ end }}
-        {{ $p | jsonify }}
     </div>
     <script src="{{ print "dist/" "lunr.b93de9e9609074d666f5123e866e25ed.min.js" | relURL }}"></script>
     <script>

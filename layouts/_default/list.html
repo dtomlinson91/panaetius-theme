@@ -15,10 +15,18 @@
 
     <div class="row row-cols-1 row-cols-lg-3">
         {{ range .Pages }}
-            <div class="col mb-3">
-                {{ .Render "card" }}
-            </div>
+        <div class="col mb-3">
+            {{ .Render "card" }}
+        </div>
         {{ end }}
+    </div>
+    <div class="row">
+        {{ $paginator := .Paginate (where .Pages "Type" "post") }}
+        {{ range $paginator.Pages }}
+        {{.}}
+        {{ end }}
+        {{ template "_internal/pagination.html" . }}
+
     </div>
 </main>
 {{ end }}
