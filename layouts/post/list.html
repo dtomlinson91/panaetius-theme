@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main class="list container pt-7 pb-5>">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <h1>All Posts</h1>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3">
+        {{ $paginator := .Paginate (where .Pages "Type" "post") }}
+        {{ range $paginator.Pages }}
+        {{ .Render "card" }}
+        {{ end }}
+    </div>
+    <div class="d-flex justify-content-center pt-5">
+        {{ template "_internal/pagination.html" . }}
+    </div>
+</main>
+{{ end }}
