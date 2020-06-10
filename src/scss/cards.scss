@@ -1,0 +1,51 @@
+.card-large, .card-regular {
+    background-color: white;
+    z-index: 1;
+    border: 1px solid rgb(204, 18, 18);
+    border-top-color: rgba(62.7%, 18.4%, 18.4%, 0.2);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgba(62.7%, 18.4%, 18.4%, 0.2);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgba(62.7%, 18.4%, 18.4%, 0.2);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgba(62.7%, 18.4%, 18.4%, 0.2);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-radius: .45rem;
+    border-top-left-radius: 0.45rem;
+    border-top-right-radius: 0.45rem;
+    border-bottom-right-radius: 0.45rem;
+    border-bottom-left-radius: 0.45rem;
+    -webkit-box-shadow: 4px 4px 36px -10px rgba(255,0,94,0.79);
+    -moz-box-shadow: 4px 4px 36px -10px rgba(255,0,94,0.79);
+    box-shadow: 4px 4px 36px -10px rgba(255,0,94,0.79);
+    transition-property: all;
+    transition-duration: 1s;
+    overflow: hidden;
+
+    &:hover {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -moz-transform: translate(-2px, -2px);
+    -ms-transform: translate(-2px, -2px);
+    -o-transform: translate(-2px, -2px);
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+    }
+
+    & .card-large-image {
+        height: 250%;
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+    }
+}
