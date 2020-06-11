@@ -16,10 +16,10 @@
             <h5 class="created text-muted text-uppercase font-weight-bold">{{ $page.Date.Format "January 2, 2006" }}</h5>
             <p class="text-muted">{{ $page.ReadingTime }} min read</p>
         </div>
-        <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+        <h2><a class="card-title-gray" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
 
         <div class="content">
-            {{ $page.Summary }}
+            {{ $page.Summary | truncate 200 }}
         </div>
         <div>
             {{- with $page.Params.tags -}}

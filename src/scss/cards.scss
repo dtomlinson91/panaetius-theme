@@ -1,4 +1,10 @@
-.card-large, .card-regular {
+@mixin image-zoom {
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+@mixin card-border {
     background-color: white;
     z-index: 1;
     border: 1px solid rgb(204, 18, 18);
@@ -24,28 +30,64 @@
     border-top-right-radius: 0.45rem;
     border-bottom-right-radius: 0.45rem;
     border-bottom-left-radius: 0.45rem;
-    -webkit-box-shadow: 4px 4px 36px -10px rgba(255,0,94,0.79);
-    -moz-box-shadow: 4px 4px 36px -10px rgba(255,0,94,0.79);
-    box-shadow: 4px 4px 36px -10px rgba(255,0,94,0.79);
+    -webkit-box-shadow: 4px 4px 36px -10px rgba(255, 0, 94, 0.79);
+    -moz-box-shadow: 4px 4px 36px -10px rgba(255, 0, 94, 0.79);
+    box-shadow: 4px 4px 36px -10px rgba(255, 0, 94, 0.79);
     transition-property: all;
     transition-duration: 1s;
     overflow: hidden;
 
     &:hover {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    -moz-transform: translate(-2px, -2px);
-    -ms-transform: translate(-2px, -2px);
-    -o-transform: translate(-2px, -2px);
-    -webkit-transform: translate(-2px, -2px);
-    transform: translate(-2px, -2px);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        -moz-transform: translate(-2px, -2px);
+        -ms-transform: translate(-2px, -2px);
+        -o-transform: translate(-2px, -2px);
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
     }
+}
+
+.card-title-gray {
+    color: $text-gray !important;
+}
+
+.card-large {
+    @include card-border;
 
     & .card-large-image {
         height: 250%;
-        background-position: center;
-        background-size: cover;
+        @include image-zoom;
+    }
+
+
+}
+
+.card-regular {
+    @include card-border;
+    min-height: 600px;
+
+    & .card-regular-image {
+        @include image-zoom;
+        height: 150%;
+        background-size: initial;
+    }
+
+    & .card-regular-image-parent {
+        height: 40%;
         overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, "md")) {
+    .card-regular-width {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: map-get($grid-breakpoints, "md")) {
+    .card-regular-width {
+        width: 80%
     }
 }
