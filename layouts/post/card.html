@@ -1,4 +1,4 @@
-<div class="d-flex flex-column card-regular card-regular-width my-2 my-md-5 px-0">
+<div class="d-flex flex-column card-regular card-regular-width my-2 my-md-5 px-0 align-items-stretch">
     {{ $page := . }}
     {{- with .Resources.Match "images/banner.svg" -}}
     {{ range . }}
@@ -16,7 +16,7 @@
         <p>{{ $page.Summary | truncate 200 }}</p>
         <div>
             {{- with $page.Params.tags -}}
-            <div class="d-flex justify-content-start">
+            <div class="d-flex justify-content-start align-items-stretch">
                 <div class="tags">
                     {{- range . -}}
                     <a class="badge badge-dark mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">

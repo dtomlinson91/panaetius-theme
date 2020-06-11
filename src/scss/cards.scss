@@ -66,7 +66,7 @@
 
 .card-regular {
     @include card-border;
-    min-height: 600px;
+    // min-height: 700px;
 
     & .card-regular-image {
         @include image-zoom;
@@ -75,7 +75,7 @@
     }
 
     & .card-regular-image-parent {
-        height: 40%;
+        height: 200px;
         overflow: hidden;
     }
 }

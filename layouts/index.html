@@ -42,10 +42,7 @@
     <!-- <div class="container-fluid" style="padding-left: 15%; padding-right: 15%;"> -->
     <div class="container">
         <div class="row d-flex justify-content-center justify-content-md-between align-content-between">
-            {{ range first 1 (after 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
-            {{ .Render "card" }}
-            {{ end }}
-            {{ range first 2 (after 2 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
+            {{ range first 3 (after 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
             {{ .Render "card" }}
             {{ end }}
         </div>
