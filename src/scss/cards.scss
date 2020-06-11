@@ -57,7 +57,7 @@
     @include card-border;
 
     & .card-large-image {
-        height: 250%;
+        height: 150%;
         @include image-zoom;
     }
 
