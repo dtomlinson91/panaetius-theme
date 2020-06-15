@@ -1,0 +1,43 @@
+{{ define "main" }}
+<main class="list container py-6">
+    {{- if or .Title .Content -}}
+    <div class="row py-3">
+        <div class="col">
+            {{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+            {{- with .Content -}}
+            <div class="content">
+                {{ . }}
+            </div>
+            {{- end -}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Groups of articles that form a series.</p>
+        </div>
+    </div>
+    {{- end -}}
+    <div class="row row-cols-1 row-cols-lg-3">
+        {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+        <div>
+            <a href="{{ $.Site.BaseURL }}series/{{ $name }}" style="text-decoration: none;">
+                <div class="h-100 card-series">
+                    {{ with $.Site.GetPage (printf "/%s" $name) }}
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="lead" style="margin-bottom: 0px; ">{{ .Params.Title }}</h5>
+                        <p class="text-muted">
+                            {{ len $taxonomy }} articles
+                        </p>
+                        <p class="mb-0">
+                            {{ .Params.Description }}
+                        </p>
+                    </div>
+                    {{ end }}
+                </div>
+        </div>
+        </a>
+    </div>
+    {{ end }}
+    </div>
+</main>
+{{ end }}

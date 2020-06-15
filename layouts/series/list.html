@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main class="list container py-6">
+    {{- if or .Title .Content -}}
+    <div class="row py-3">
+        <div class="col">
+            {{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+            {{- with .Content -}}
+            <div class="content">
+                {{ . }}
+            </div>
+            {{- end -}}
+        </div>
+    </div>
+    {{- end -}}
+    <div class="row d-flex justify-content-around">
+        {{ $paginator := .Paginate (where .Pages "Type" "post") }}
+        {{ range $paginator.Pages.ByDate }}
+        {{ .Render "card" }}
+        {{ end }}
+    </div>
+    <div class="row d-flex justify-content-center">
+        {{ template "_internal/pagination.html" . }}
+    </div>
+</main>
+{{ end }}

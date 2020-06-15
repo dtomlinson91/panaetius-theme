@@ -80,6 +80,11 @@
     }
 }
 
+.card-series {
+    @include card-border;
+    color: $text-gray
+}
+
 @media only screen and (min-width: map-get($grid-breakpoints, "md")) {
     .card-regular-width {
         width: 30%;

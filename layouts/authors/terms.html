@@ -14,7 +14,7 @@
                     </ul>
                 </div>
                 <ul>
-                    {{ range .Site.Taxonomies.tags }}
+                    {{ range .Site.Taxonomies.series }}
                     <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
                     {{ end }}
                 </ul>
