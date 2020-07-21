@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col">
                 <div class="d-flex justify-content-center">
-                    <form id="search-form" method="get" action="/search" method="POST" class="form-inline form-single">
+                    <form id="search-form" method="get" action="/search/" method="POST" class="form-inline form-single">
                         <input type="text" name="q" id="search" class="form-control form-control-sm" placeholder="Search">
                         <div class="input-group">
                             <div class="input-group-append">
@@ -83,7 +83,7 @@
                                     <div class="tags">
                                         ${
                                           p.tags.map(function (tag) {
-                                          return "<a class='badge badge-dark mr-2' href='/tags/" + tag.toLowerCase() +"'>" + "<i class='fas fa-tag mr-2'></i>" + tag + "</a>"
+                                          return "<a class='badge badge-dark mr-2' href='/tags/" + tag.toLowerCase() +"/'>" + "<i class='fas fa-tag mr-2'></i>" + tag + "</a>"
                                           }).join('')
                                         }
                                     </div>

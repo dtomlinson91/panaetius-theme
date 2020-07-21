@@ -20,7 +20,7 @@
     <div class="row row-cols-1 row-cols-lg-3">
         {{ range $name, $taxonomy := .Site.Taxonomies.series }}
         <div>
-            <a href="{{ $.Site.BaseURL }}series/{{ $name }}" style="text-decoration: none;">
+            <a href="{{ $.Site.BaseURL }}series/{{ $name }}/" style="text-decoration: none;">
                 <div class="h-100 card-series">
                     {{ with $.Site.GetPage (printf "/%s" $name) }}
                     <div class="card-body d-flex flex-column">

@@ -19,7 +19,7 @@
             <div class="d-flex justify-content-start align-items-stretch">
                 <div class="tags">
                     {{- range . -}}
-                    <a class="badge badge-dark mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                    <a class="badge badge-dark mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
                         <i class="fas fa-tag mr-2"></i>{{ . }}
                     </a>
                     {{- end -}}

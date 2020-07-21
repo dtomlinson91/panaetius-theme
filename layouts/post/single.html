@@ -41,7 +41,7 @@
                     <div class="col-lg-9">
                         <div class="tags my-3">
                             {{- range . -}}
-                            <a class="badge badge-dark mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                            <a class="badge badge-dark mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
                                 <i class="fas fa-tag mr-2"></i>{{ . }}
                             </a>
                             {{- end -}}

@@ -15,7 +15,7 @@
     <div class="row row-cols-1 row-cols-lg-3">
         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
         <div class="col my-1">
-            <a href="{{ $.Site.BaseURL }}tags/{{ $name }}" style="text-decoration: none;">
+            <a href="{{ $.Site.BaseURL }}tags/{{ $name }}/" style="text-decoration: none;">
                 <div class="card-regular h-100" >
                     <div class="card-body" >
                         <h5 class="lead" style="margin-bottom: 0px; "><i class="fas fa-tag" style="font-size: 0.8em;"></i> {{ $name }}</h4> {{ len $taxonomy }} articles
