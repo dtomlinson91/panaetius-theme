@@ -9,8 +9,8 @@
     "js": "2.lazyload.1168fc21175de558d316.min.js"
   },
   "main": {
-    "css": "main.0cbee9de77c807b0b044.min.css",
-    "js": "main.48637aff6f96e597ae05.min.js"
+    "css": "main.26e4723e96e8bcd78b5f.min.css",
+    "js": "main.fc08d5d267c5846c8341.min.js"
   },
   "vendors~app": {
     "js": "4.vendors~app.7827f3b332495242afbd.min.js"
@@ -47,6 +47,7 @@
       "a88fa636656948bd2edb86bce59f0eec.otf",
       "cf6ea537acbd7e39208334261f95783e.otf",
       "da9fb05ff6c5f02b52f5b416cfe61d39.otf"
-    ]
+    ],
+    "js": "6.6.91402cdcff834b1793e6.min.js"
   }
 }

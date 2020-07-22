@@ -3,8 +3,8 @@
 </div>
 <main class="content-page container-fluid pt-7 pb-5">
     {{ $page := . }}
-    <div class="row justify-content-around">
-        <div class="col-lg-7" style="background-color: white;">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-7 order-1 order-lg-0 shadow-lg" style="background-color: white;">
             {{- with .Resources.Match "images/banner.svg" -}}
             {{ range . }}
             <div class="row justify-content-center mb-3">
@@ -17,11 +17,11 @@
             <article>
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
-                        <h1 class="display-3">{{ $page.Title }}</h1>
+                        <h1 class="card-title-gray pt-4">{{ $page.Title }}</h1>
 
-                        <div class="d-flex justify-content-between  align-items-stretch post-info">
+                        <div class="d-inline-flex justify-content-between  align-items-stretch post-info">
                             <div>{{ partial "authors.html" $page }}</div>
-                            <div class="meta text-muted mb-3 d-flex flex-column justify-content-start">
+                            <div class="text-muted mb-3 d-flex flex-column justify-content-start">
                                 <div>
                                     <p class="text-muted">Posted on</p>
                                 </div>
@@ -70,28 +70,17 @@
 
             </article>
         </div>
-        <div class="col-lg-2" style="background-color: white;">
-            <div class="sticky-top" style="top: 56px;">
-                <p class="text-uppercase text-muted pt-2">On this page</p>
-                <div class="toc-contents">
+        <div class="col-12 col-lg-2 order-0 ml-lg-2 d-none d-lg-block">
+            <div class="sticky-top shadow-sm toc-container">
+                <p class="text-uppercase text-center text-muted pt-4">On this page</p>
+                <div class="toc-contents toc pb-3">
                     {{ .TableOfContents }}
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg-9">
+        <div class="col-12 col-lg-9 order-2">
             {{ partial "related.html" $page }}
         </div>
-        {{/*  <div id="" class="col-lg-2 toc-sidebar d-none d-md-block">
-            <aside>
-                <h5 class="text-center text-uppercase">Table of contents</h5>
-                <div class="toc-contents">
-                    {{ .TableOfContents }}
-    </div>
-    </aside>
-    <div class="d-flex justify-content-center">
-        <img src="/images/icons/Wizard.png" style="width: 50%;" />
-    </div>
-    </div> */}}
     </div>
 
 </main>

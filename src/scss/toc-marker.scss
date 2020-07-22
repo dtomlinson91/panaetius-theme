@@ -1,0 +1,41 @@
+@mixin toc-selected {
+    color: $text-gray;
+    transform: translate(5px);
+}
+
+.toc {
+    line-height: 2;
+
+    ul {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    ul ul {
+        padding-left: 1em;
+    }
+
+    li a {
+        display: inline-block;
+        color: $text-muted;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+        font-size: 0.9rem;
+
+        &:hover {
+            @include toc-selected;
+        }
+    }
+
+    li.visible>a {
+        @include toc-selected;
+    }
+}
+
+// Adds offset to the headers in the post content to ignore the navbar height (avoids underscroll).
+:target[id]:before {
+    content: '';
+    display: block;
+    height: 58px;
+    margin: -30px 0 0;
+}
