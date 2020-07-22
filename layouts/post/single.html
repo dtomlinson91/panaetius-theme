@@ -4,7 +4,7 @@
 <main class="content-page container-fluid pt-7 pb-5">
     {{ $page := . }}
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-7 order-1 order-lg-0 shadow-lg" style="background-color: white;">
+        <div class="col-12 col-lg-7 order-1 order-lg-0 shadow-lg">
             {{- with .Resources.Match "images/banner.svg" -}}
             {{ range . }}
             <div class="row justify-content-center mb-3">
@@ -18,19 +18,20 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
                         <h1 class="card-title-gray pt-4">{{ $page.Title }}</h1>
-
-                        <div class="d-inline-flex justify-content-between  align-items-stretch post-info">
-                            <div>{{ partial "authors.html" $page }}</div>
-                            <div class="text-muted mb-3 d-flex flex-column justify-content-start">
-                                <div>
-                                    <p class="text-muted">Posted on</p>
+                        <div class="row">
+                            {{/*  <div class="d-flex justify-content-end align-items-stretch post-info">  */}}
+                                <div class="col-6">{{ partial "authors.html" $page }}</div>
+                                <div class="text-muted mb-3 d-flex flex-column justify-content-start col-6">
+                                    <div>
+                                        <p class="text-muted">Posted on</p>
+                                    </div>
+                                    <div>
+                                        <p class="created text-muted text-uppercase font-weight-bold mb-1">{{ $page.Date.Format "January 2, 2006" }}</p>
+                                        <span class="mr-2"><i class="fas fa-book-open mr-2"></i>{{ $page.WordCount }} words</span>
+                                        <span><i class="fas fa-clock mr-2"></i>{{ $page.ReadingTime }} min read</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p class="created text-muted text-uppercase font-weight-bold mb-1">{{ $page.Date.Format "January 2, 2006" }}</p>
-                                    <span class="mr-2"><i class="fas fa-book-open mr-2"></i>{{ $page.WordCount }} words</span>
-                                    <span><i class="fas fa-clock mr-2"></i>{{ $page.ReadingTime }} min read</span>
-                                </div>
-                            </div>
+                            {{/*  </div>  */}}
                         </div>
                     </div>
                 </div>
