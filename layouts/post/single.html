@@ -3,13 +3,13 @@
 </div>
 <main class="content-page container-fluid pt-7 pb-5">
     {{ $page := . }}
-    <div class="row">
-        <div class="col-lg-8">
+    <div class="row justify-content-around">
+        <div class="col-lg-7" style="background-color: white;">
             {{- with .Resources.Match "images/banner.svg" -}}
             {{ range . }}
             <div class="row justify-content-center mb-3">
                 <div class="col-lg-10">
-                    <img data-src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block" alt="{{ $page.Title }}" data-aos="zoom-in">
+                    <img data-src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block mt-3" alt="{{ $page.Title }}" data-aos="zoom-in">
                 </div>
             </div>
             {{- end -}}
@@ -70,20 +70,28 @@
 
             </article>
         </div>
+        <div class="col-lg-2" style="background-color: white;">
+            <div class="sticky-top" style="top: 56px;">
+                <p class="text-uppercase text-muted pt-2">On this page</p>
+                <div class="toc-contents">
+                    {{ .TableOfContents }}
+                </div>
+            </div>
+        </div>
         <div class="col-12 col-lg-9">
             {{ partial "related.html" $page }}
         </div>
-        <div id="" class="col-lg-2 toc-sidebar d-none d-md-block">
+        {{/*  <div id="" class="col-lg-2 toc-sidebar d-none d-md-block">
             <aside>
                 <h5 class="text-center text-uppercase">Table of contents</h5>
                 <div class="toc-contents">
                     {{ .TableOfContents }}
-                </div>
-            </aside>
-            <div class="d-flex justify-content-center">
-                <img src="/images/icons/Wizard.png" style="width: 50%;" />
-            </div>
-        </div>
+    </div>
+    </aside>
+    <div class="d-flex justify-content-center">
+        <img src="/images/icons/Wizard.png" style="width: 50%;" />
+    </div>
+    </div> */}}
     </div>
 
 </main>
