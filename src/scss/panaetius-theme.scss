@@ -46,7 +46,6 @@ pre code {
     background-color: transparent;
 }
 
-.latest h2 a,
 .navbar a,
 .card>a,
 a.badge {
@@ -83,7 +82,8 @@ footer a:not(.icons) {
 }
 
 .navbar {
-    border-bottom: 1px solid #a02f2f;
+    // border-bottom: 1px solid #a02f2f;
+    border-bottom: 1px solid #2f3ba0;
 }
 
 .rotate-a-20 {

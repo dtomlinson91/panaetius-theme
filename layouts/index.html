@@ -1,60 +1,83 @@
 {{ define "main" }}
 <img src="/images/front-wallpaper.svg" class="front-background">
-<main class="homepage container py-6">
+<main class="homepage py-6">
+    <div class="container">
         <div class="hero row pt-3 pt-md-6">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center text-center text-md-left">
                 <div>
                     <h1 class="display-4">{{ .Site.Title }}</h1>
-                    {{- with .Site.Params.description -}}
                 </div>
+                {{- with .Site.Params.homepageImage -}}
+                <div class="homepage-image d-xs-block d-md-none pb-4">
+                    <img data-src="{{ . | relURL }}" class="img-fluid" data-aos="zoom-in">
+                </div>
+                {{- end -}}
                 <div>
+                    {{- with .Site.Params.description -}}
                     <h3 class="font-weight-normal">{{ . | safeHTML }}</h3>
                     {{- end -}}
                 </div>
             </div>
-            <div class="col-0 col-md-6 d-flex">
+            <div class="col-12 col-md-6 d-flex">
                 {{- with .Site.Params.homepageImage -}}
-                {{/*  <div class="homepage-image" data-aos="zoom-in">  */}}
                 <div class="homepage-image d-none d-sm-block">
-                    <img data-src="{{ . | relURL }}" class="img-fluid">
+                    <img data-src="{{ . | relURL }}" class="img-fluid" data-aos="zoom-in">
                 </div>
                 {{- end -}}
+
             </div>
         </div>
-        <div class="row">
-
-            <!-- Latest article -->
+    </div>
+    <div class="container">
+        <div class="row d-none d-md-block">
             {{- range first 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
-            {{ $page := . }}
-            <div class="latest row py-lg-5">
-                <div class="col-lg-6 mb-3">
-                    {{- with .Resources.Match "images/banner.svg" -}}
-                    {{ range . }}
-                    {{- $image := . -}}
-                    <a href="{{ $page.RelPermalink }}" class="d-block">
-                        <img data-src="{{ $image.RelPermalink }}" class="img-fluid rounded" alt="{{ $page.Title }}" data-aos="zoom-in">
-                    </a>
-                    {{- end -}}
-                    {{- end -}}
-                </div>
-                <div class="col-lg-6 mb-3">
-                    <h5 class="created text-muted text-uppercase font-weight-bold">{{ $page.Date.Format "January 2, 2006" }}</h5>
-                    <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
-
-                    <div class="content">
-                        {{ $page.Summary }}
-                    </div>
-                </div>
+            <div class="latest d-flex py-lg-5 justify-content-center">
+                {{ .Render "card-large" }}
             </div>
             {{- end -}}
-
-            <!-- Articles -->
-            <div class="articles row row-cols-1 row-cols-lg-3">
-                {{ range after 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-                <div class="col mb-3" data-aos="zoom-in">
-                    {{ .Render "card" }}
-                </div>
-                {{ end }}
+        </div>
+        <div class="row d-block d-md-none">
+            {{- range first 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
+            <div class="latest d-flex justify-content-center py-lg-5">
+                {{ .Render "card" }}
+            </div>
+            {{- end -}}
+        </div>
+    </div>
+    <div class="container">
+        <div class="row d-flex justify-content-center justify-content-md-between align-content-between">
+            {{ range first 3 (after 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
+            {{ .Render "card" }}
+            {{ end }}
+        </div>
+    </div>
+    <div class="container">
+        <div class="row d-none d-md-block">
+            {{- range first 1 (after 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) -}}
+            <div class="latest d-flex py-lg-5">
+                {{ .Render "card-large" }}
+            </div>
+            {{- end -}}
+        </div>
+        <div class="row d-block d-md-none">
+            {{- range first 1 (after 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) -}}
+            <div class="latest d-flex justify-content-center py-lg-5">
+                {{ .Render "card" }}
+            </div>
+            {{- end -}}
+        </div>
+    </div>
+    <div class="container">
+        <div class="row d-flex justify-content-center justify-content-md-between align-content-between">
+            {{ range first 3 (after 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
+            {{ .Render "card" }}
+            {{ end }}
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center text-center pt-5">
+                <a href="/post/">
+                    <button type="button" class="btn btn-lg btn-outline-primary">See all posts</button>
+                </a>
             </div>
         </div>
     </div>

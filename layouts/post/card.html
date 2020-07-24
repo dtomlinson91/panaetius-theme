@@ -1,18 +1,31 @@
-<div class="card h-100" data-aos="zoom-in">
+<div class="d-flex flex-column card-regular card-regular-width my-2 my-md-5 px-0 align-items-stretch">
     {{ $page := . }}
-    <a href="{{ $page.RelPermalink }}" class="d-block">
-                {{- with .Resources.Match "images/banner.svg" -}}
-                {{ range . }}
-                    {{- $image := . -}}
-                    <img data-src="{{ $image.RelPermalink }}" class="card-img-top mx-auto d-block pt-2" alt="{{ $page.Title }}">
-                {{- end -}}
-            {{- end -}}
-        <div class="card-body">
-            <h4 class="card-title">{{ $page.Title }}</h4>
-            <p class="card-text text-muted text-uppercase">{{ $page.Date.Format "January 2, 2006" }}</p>
-            <div class="card-text">
-                {{ $page.Summary | plainify }}
-            </div>
+    {{- with .Resources.Match "images/banner.svg" -}}
+    {{ range . }}
+    {{- $image := . -}}
+    <div class="card-regular-image-parent">
+        <div class="ma-0 pa-0 card-regular-image" style="background-image: url('{{ $image.RelPermalink }}');">
         </div>
-    </a>
+    </div>
+    {{- end -}}
+    {{- end -}}
+    <div class="mx-3 my-3">
+        <h5 class="created text-muted text-uppercase font-weight-bold mb-0">{{ $page.Date.Format "January 2, 2006" }}</h5>
+        <p class="text-muted">{{ $page.ReadingTime }} min read</p>
+        <h2><a class="card-title-gray" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+        <p>{{ $page.Summary | truncate 200 }}</p>
+        <div>
+            {{- with $page.Params.tags -}}
+            <div class="d-flex justify-content-start align-items-stretch">
+                <div class="tags">
+                    {{- range . -}}
+                    <a class="badge badge-dark mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
+                        <i class="fas fa-tag mr-2"></i>{{ . }}
+                    </a>
+                    {{- end -}}
+                </div>
+            </div>
+            {{- end -}}
+        </div>
+    </div>
 </div>

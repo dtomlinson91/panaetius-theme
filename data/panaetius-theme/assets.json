@@ -9,14 +9,17 @@
     "js": "2.lazyload.1168fc21175de558d316.min.js"
   },
   "main": {
-    "css": "main.056eb67e3d086eb33a6f.min.css",
-    "js": "main.48637aff6f96e597ae05.min.js"
+    "css": "main.b8f5fbcfbcd649f85b5e.min.css",
+    "js": "main.5f08acb7138457c0f12a.min.js"
+  },
+  "toc": {
+    "js": "4.toc.cadd3d10b2475406483a.min.js"
   },
   "vendors~app": {
-    "js": "4.vendors~app.7827f3b332495242afbd.min.js"
+    "js": "5.vendors~app.c54336286ff97590d35b.min.js"
   },
   "vendors~bootstrap": {
-    "js": "5.vendors~bootstrap.ebc6358ec2d8424a6fb0.min.js"
+    "js": "6.vendors~bootstrap.f09f391b73c48906a4a7.min.js"
   },
   "": {
     "ttf": [
