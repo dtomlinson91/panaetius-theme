@@ -115,4 +115,17 @@ export default {
       });
     });
   },
+  syntaxHighlight: () => {
+    if (!window.Prism) {
+      return;
+    }
+
+    Prism.highlightAll();
+    $("pre:has(> code[class*=language-])").removeAttr("style");
+
+    const element = $("pre:has(> code:not([class*=language-]))");
+
+    element.addClass("language-none");
+    $("> code", element).addClass("language-none");
+  },
 };

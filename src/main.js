@@ -12,5 +12,6 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   // App.navbarFade();
   App.aos();
   App.scrollBar();
+  App.syntaxHighlight();
   animatedToc.animatedToc();
 });

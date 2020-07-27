@@ -1,6 +1,6 @@
 @mixin toc-selected {
-    color: $text-gray;
-    transform: translate(5px);
+    color: $text-gray !important;
+    transform: translate(5px) !important;
 }
 
 .toc {
@@ -30,6 +30,10 @@
     li.visible>a {
         @include toc-selected;
     }
+}
+
+.visible {
+    @include toc-selected;
 }
 
 // Adds offset to the headers in the post content to ignore the navbar height (avoids underscroll).
