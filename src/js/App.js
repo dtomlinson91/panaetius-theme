@@ -119,6 +119,7 @@ export default {
     if (!window.Prism) {
       return;
     }
+    $("pre").addClass("line-numbers");
 
     Prism.highlightAll();
     $("pre:has(> code[class*=language-])").removeAttr("style");
