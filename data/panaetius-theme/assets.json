@@ -1,25 +1,25 @@
 {
-  "vendors~app~bootstrap": {
-    "js": "0.vendors~app~bootstrap.e59019bd2c01f8f5dd1c.min.js"
+  "vendors~app~bootstrap~toc": {
+    "js": "0.vendors~app~bootstrap~toc.b2eb67a3ea146c5b9b8b.min.js"
   },
   "app": {
-    "js": "1.app.fcb5ae1a10d7e4a3222a.min.js"
+    "js": "1.app.0171dc68e616d119970d.min.js"
   },
   "lazyload": {
     "js": "2.lazyload.1168fc21175de558d316.min.js"
   },
   "main": {
-    "css": "main.b8f5fbcfbcd649f85b5e.min.css",
-    "js": "main.f9591c5b2e8da61087a5.min.js"
+    "css": "main.d23d7bda155c6e676961.min.css",
+    "js": "main.e7a953e42c0e99b6b3d2.min.js"
   },
   "toc": {
-    "js": "4.toc.fba07cd1823aeff53f79.min.js"
+    "js": "4.toc.03434376512d8b77afa5.min.js"
   },
   "vendors~app": {
-    "js": "5.vendors~app.c54336286ff97590d35b.min.js"
+    "js": "5.vendors~app.8c8ddff0b64f83d99430.min.js"
   },
   "vendors~bootstrap": {
-    "js": "6.vendors~bootstrap.f09f391b73c48906a4a7.min.js"
+    "js": "6.vendors~bootstrap.516661a54a941b969f37.min.js"
   },
   "": {
     "ttf": [

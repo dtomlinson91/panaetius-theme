@@ -1,26 +1,22 @@
 export function animatedToc() {
-  console.log("toc loaded")
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const id = entry.target.getAttribute("id");
-      console.log("getting entry id")
-      if (entry.intersectionRatio > 0) {
-        console.log("adding class")
-        document
-          .querySelector(`toc li a[href="#${id}"]`)
-          .parentElement.classList.add("visible");
-      } else {
-        document
-          .querySelector(`toc li a[href="#${id}"]`)
-          .parentElement.classList.remove("visible");
+  $(window)
+    .scroll(function () {
+      var windScroll = $(this).scrollTop();
+      if (windScroll) {
+        $(".content > h2, h3, h4").each(function () {
+          if ($(this).position().top <= windScroll - 400) {
+            var activeHeader = $(".toc-contents").find(
+              '[href="#' + $(this).attr("id") + '"]'
+            );
+            if (activeHeader.length) {
+              $("#TableOfContents").find("a").removeClass("visible");
+              activeHeader.addClass("visible");
+            }
+          }
+        });
       }
-    });
-  });
-
-  // Track all sections that have an `id` applied
-  document.querySelectorAll("section[id]").forEach((section) => {
-    observer.observe(section);
-  });
+    })
+    .scroll();
 }
 
 // export function animatedToc() {
