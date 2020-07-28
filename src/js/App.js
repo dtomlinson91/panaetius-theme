@@ -13,6 +13,7 @@ import {
   faRss,
   faTag,
   faSearch,
+  faFileCode,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -59,7 +60,8 @@ library.add(
   faTag,
   faTwitter,
   faWeibo,
-  faSearch
+  faSearch,
+  faFileCode
 );
 
 export default {
