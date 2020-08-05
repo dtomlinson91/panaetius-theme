@@ -3,10 +3,13 @@ div {
         top: 56px;
         background-color: white;
         z-index: 0;
+        // width: fit-content;
+        padding-left: 10%;
+        padding-right: 10%;
     }
 
-    &.toc-contents {
-        padding-left: 10px;
-        // z-index: 1;
-    }
+    // &.toc-contents {
+    // padding-left: 10px;
+    // z-index: 1;
+    // }
 }

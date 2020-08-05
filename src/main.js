@@ -14,4 +14,5 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.scrollBar();
   App.syntaxHighlight();
   animatedToc.animatedToc();
+  App.tocBot();
 });
