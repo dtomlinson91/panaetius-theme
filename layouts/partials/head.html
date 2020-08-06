@@ -134,13 +134,18 @@
 <meta name="apple-touch-fullscreen" content="yes" />
 
 {{ if .Site.Params.prismJS.enable }}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.min.css">
 {{ if .Site.Params.prismJS.theme }}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-{{ .Site.Params.prismJS.theme }}.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-{{ .Site.Params.prismJS.theme }}.min.css">
 {{ else }}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css">
 {{ end }}
 {{ end }}
+
+{{/*  Bootstrap TOC  */}}
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
 
 {{ with index .Site.Data "panaetius-theme" }}
 {{ range $vendor := .assets }}

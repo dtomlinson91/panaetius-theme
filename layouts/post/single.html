@@ -71,7 +71,7 @@
 
             </article>
         </div>
-        <div class="col-12 col-lg-2 order-0 mb-3 mb-lg-0 ml-lg-2 d-block d-lg-block">
+        {{/*  <div class="col-12 col-lg-2 order-0 mb-3 mb-lg-0 ml-lg-2 d-block d-lg-block">
             <svg class="toc-marker display-none" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
                 <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
             </svg>
@@ -81,7 +81,9 @@
                     {{ .TableOfContents }}
                 </div>
             </div>
-        </div>
+        </div>  */}}
+        <nav id="toc" data-toggle="toc"></nav>
+
         <div class="col-12 col-lg-9 order-2">
             {{ partial "related.html" $page }}
         </div>

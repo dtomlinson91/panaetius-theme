@@ -10,7 +10,7 @@
     {{ partial "matomo.html" }}
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#toc">
     {{ partial "header.html" . }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}
