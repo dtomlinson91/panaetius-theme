@@ -131,4 +131,12 @@ export default {
     element.addClass("language-none");
     $("> code", element).addClass("language-none");
   },
+  bootstrapTOC: () => {
+    var navSelector = "#toc";
+    var $myNav = $(navSelector);
+    Toc.init($myNav);
+    $("body").scrollspy({
+      target: navSelector,
+    });
+  },
 };
