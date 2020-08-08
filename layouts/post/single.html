@@ -4,9 +4,11 @@
 <main class="content-page container-fluid pt-7 pb-5">
     {{ $page := . }}
     <div class="row justify-content-center">
-                            <div class="col-lg-3">
-                        <nav id="toc" class="sticky-top"></nav>
-                    </div>
+        <div class="col-lg-3">
+            <div class="sticky-top shadow-sm toc-container">
+                <nav id="toc"></nav>
+            </div>
+        </div>
         <div class="col-12 col-lg-7 order-1 order-lg-0 shadow-lg">
             {{- with .Resources.Match "images/banner.svg" -}}
             {{ range . }}
