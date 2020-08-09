@@ -12,6 +12,10 @@ const CssMinimizer = require("optimize-css-assets-webpack-plugin");
 module.exports = merge(common, {
   mode: "production",
   devtool: "none",
+  entry: {
+    αbootstrapToc: "./node_modules/bootstrap-toc/dist/bootstrap-toc.js",
+    // jquery: "./node_modules/jquery/dist/jquery.js",
+  },
   output: {
     filename: "[name].[contenthash].min.js",
     chunkFilename: "[id].[name].[contenthash].min.js",

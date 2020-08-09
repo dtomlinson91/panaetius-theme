@@ -16,6 +16,7 @@
     "assets-webpack-plugin": "^3.9.12",
     "babel-loader": "^8.1.0",
     "bootstrap": "^4.5.0",
+    "bootstrap-toc": "afeld/bootstrap-toc",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",

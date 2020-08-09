@@ -138,5 +138,6 @@ export default {
     $("body").scrollspy({
       target: navSelector,
     });
+    $("#toc ul").eq(0).remove();
   },
 };
