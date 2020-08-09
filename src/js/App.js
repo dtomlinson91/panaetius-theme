@@ -132,12 +132,14 @@ export default {
     $("> code", element).addClass("language-none");
   },
   bootstrapTOC: () => {
+    console.log("running toc")
     var navSelector = "#toc";
     var $myNav = $(navSelector);
-    Toc.init($myNav);
+    Toc.init({ $nav: $myNav });
     $("body").scrollspy({
       target: navSelector,
     });
+    // $myNav.append('<a class="back-to-top" href="#">Back to top</a>');
     $("#toc ul").eq(0).remove();
   },
 };
