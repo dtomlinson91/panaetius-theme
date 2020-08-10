@@ -5,7 +5,7 @@ const merge = require("webpack-merge");
 // const TerserPlugin = require("terser-webpack-plugin");
 // const CssMinimizer = require("optimize-css-assets-webpack-plugin");
 const AssetsPlugin = require("assets-webpack-plugin");
-
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // const PurgeCssPlugin = require("purgecss-webpack-plugin");
 // const whitelister = require("purgecss-whitelister");
 // const glob = require("glob-all");
@@ -23,6 +23,12 @@ module.exports = merge(common, {
       path: path.resolve(__dirname, "data/panaetius-theme"),
       prettyPrint: true,
       fullPath: false,
+    }),
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: [
+        "static/dist/*",
+        "data/panaetius-theme/*.json",
+      ],
     }),
   ],
 });

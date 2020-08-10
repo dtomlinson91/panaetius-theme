@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizer = require("optimize-css-assets-webpack-plugin");
@@ -58,12 +57,6 @@ module.exports = {
       sourceMap: true,
     }),
     new webpack.HashedModuleIdsPlugin(),
-    new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: [
-        "static/dist/*",
-        "data/panaetius-theme/*.json",
-      ],
-    }),
     // new AssetsPlugin({
     //   filename: "assets.json",
     //   path: path.resolve(__dirname, "data/panaetius-theme"),
