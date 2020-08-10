@@ -15,19 +15,19 @@ module.exports = merge(common, {
   mode: "production",
   devtool: "none",
   entry: {
-    main: path.resolve(__dirname, "src/main.js"),
+    main: path.resolve(__dirname, "../src/main.js"),
   },
   plugins: [
     new AssetsPlugin({
       filename: "assets.json",
-      path: path.resolve(__dirname, "data/panaetius-theme"),
+      path: path.resolve(__dirname, "../data/panaetius-theme"),
       prettyPrint: true,
       fullPath: false,
     }),
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: [
-        "static/dist/*",
-        "data/panaetius-theme/*.json",
+        "../static/dist/*",
+        "../data/panaetius-theme/*.json",
       ],
     }),
   ],

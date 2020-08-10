@@ -10,7 +10,7 @@ module.exports = {
   devtool: "source-map",
   // entry: { main: path.resolve(__dirname, "src/main.js") },
   output: {
-    path: path.resolve(__dirname, "static/dist"),
+    path: path.resolve(__dirname, "../static/dist"),
     filename: "[name].[contenthash].min.js",
     chunkFilename: "[id].[name].[contenthash].min.js",
     publicPath: "/dist/",
