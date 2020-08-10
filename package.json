@@ -3,8 +3,10 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
+    "buildOldPosts": "webpack --config webpack.posts.js",
     "watch": "webpack --watch --progress --colors --config webpack.dev.js",
-    "buildTheme": "gulp buildTheme"
+    "buildMain": "gulp buildMain",
+    "buildPosts": "gulp buildPosts"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
@@ -16,8 +18,10 @@
     "assets-webpack-plugin": "^3.9.12",
     "babel-loader": "^8.1.0",
     "bootstrap": "^4.5.0",
+    "bootstrap-toc": "afeld/bootstrap-toc",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
+    "expose-loader": "^1.0.0",
     "file-loader": "^6.0.0",
     "glob-all": "^3.2.1",
     "gulp": "^4.0.2",
