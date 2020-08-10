@@ -1,14 +1,20 @@
 const webpack = require("webpack");
 const path = require("path");
-const AssetsPlugin = require("assets-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizer = require("optimize-css-assets-webpack-plugin");
+const AssetsPlugin = require("assets-webpack-plugin");
 
 module.exports = {
   mode: "development",
   devtool: "source-map",
-  entry: { main: path.resolve(__dirname, "src/main.js") },
+  // entry: { main: path.resolve(__dirname, "src/main.js") },
   output: {
     path: path.resolve(__dirname, "static/dist"),
+    filename: "[name].[contenthash].min.js",
+    chunkFilename: "[id].[name].[contenthash].min.js",
+    publicPath: "/dist/",
   },
   module: {
     rules: [
@@ -16,6 +22,20 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         loader: "babel-loader",
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          "style-loader",
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.(ttf|otf)$/,
+        use: ["file-loader"],
       },
       {
         // Exposes jQuery for use outside Webpack build
@@ -32,21 +52,35 @@ module.exports = {
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].min.css",
+      chunkFilename: "[name].[contenthash].min.css",
+      sourceMap: true,
+    }),
+    new webpack.HashedModuleIdsPlugin(),
     new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: ["static/dist/*"],
+      cleanAfterEveryBuildPatterns: [
+        "static/dist/*",
+        "data/panaetius-theme/*.json",
+      ],
     }),
-    new AssetsPlugin({
-      filename: "assets.json",
-      path: path.resolve(__dirname, "data/panaetius-theme"),
-      prettyPrint: true,
-      fullPath: false,
-    }),
+    // new AssetsPlugin({
+    //   filename: "assets.json",
+    //   path: path.resolve(__dirname, "data/panaetius-theme"),
+    //   prettyPrint: true,
+    //   fullPath: false,
+    // }),
     new webpack.ProvidePlugin({
       // Provides jQuery for other JS bundled with Webpack
       $: "jquery",
       jquery: "jquery",
-      // "window.$": "jquery",
-      // "window.jQuery": "jquery",
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({ extractComments: false }),
+      new CssMinimizer(),
+    ],
+  },
 };

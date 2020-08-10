@@ -3,6 +3,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
+    "buildPosts": "webpack --config webpack.posts.js",
     "watch": "webpack --watch --progress --colors --config webpack.dev.js",
     "buildTheme": "gulp buildTheme"
   },
