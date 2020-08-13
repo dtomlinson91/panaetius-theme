@@ -131,15 +131,14 @@ export default {
     element.addClass("language-none");
     $("> code", element).addClass("language-none");
   },
-  bootstrapTOC: () => {
-    console.log("running toc")
-    var navSelector = "#toc";
-    var $myNav = $(navSelector);
-    Toc.init({ $nav: $myNav });
-    $("body").scrollspy({
-      target: navSelector,
-    });
-    // $myNav.append('<a class="back-to-top" href="#">Back to top</a>');
-    $("#toc ul").eq(0).remove();
+  testModal: () => {
+    // console.log("enabling modal");
+    // $("#exampleModalCenter").modal({
+    //   keyboard: false,
+    //   show: false,
+    // });
+    // $("#modal-button").on("click", () => {
+    //   $("#exampleModalCenter").modal("toggle");
+    // });
   },
 };

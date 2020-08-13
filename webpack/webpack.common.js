@@ -67,6 +67,7 @@ module.exports = {
       // Provides jQuery for other JS bundled with Webpack
       $: "jquery",
       jquery: "jquery",
+      // bootstrap: "bootstrap",
     }),
   ],
   optimization: {

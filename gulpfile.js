@@ -1,11 +1,11 @@
 const webpack = require("webpack");
-const webpackProdConfig = require("./webpack/webpack.prod");
+const webpackGlobalConfig = require("./webpack/webpack.prod");
 const webpackPostConfig = require("./webpack/post/webpack.prod");
 const gulp = require("gulp");
 
-configs = [webpackProdConfig, webpackPostConfig];
+configs = [webpackGlobalConfig, webpackPostConfig];
 
-function buildMain(cb) {
+function buildGlobal(cb) {
   return new Promise((resolve, reject) => {
     webpack(configs[0], (err, stats) => {
       if (err) {
@@ -34,6 +34,6 @@ function buildPosts(cb) {
 }
 
 module.exports = {
-  buildMain: buildMain,
+  buildGlobal: buildGlobal,
   buildPosts: buildPosts,
 };

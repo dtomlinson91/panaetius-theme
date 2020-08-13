@@ -12,5 +12,10 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.aos();
   App.scrollBar();
   App.syntaxHighlight();
-  App.bootstrapTOC();
+  App.testModal();
 });
+
+// const globalfuncs = await import(
+//   /* webpackChunkName: "exports" */ "./js/global/exports"
+// );
+// module.exports = globalfuncs.showModal;

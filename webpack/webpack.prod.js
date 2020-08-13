@@ -15,8 +15,17 @@ module.exports = merge(common, {
   mode: "production",
   devtool: "none",
   entry: {
-    main: path.resolve(__dirname, "../src/main.js"),
+    mainGlobal: path.resolve(__dirname, "../src/mainGlobal.js"),
+    bootstrap: path.resolve(
+      __dirname,
+      "../node_modules/bootstrap/dist/js/bootstrap.js"
+    ),
+    // showModal: path.resolve(__dirname, "../src/js/global/exports.js"),
   },
+  // output: {
+  //   libraryTarget: "var",
+  //   library: "[name]",
+  // },
   plugins: [
     new AssetsPlugin({
       filename: "assets.json",

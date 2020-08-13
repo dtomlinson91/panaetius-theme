@@ -1,5 +1,14 @@
 {
+  "appPosts": {
+    "js": "0.appPosts.a4d1e9c2215f5e2cdc57.min.js"
+  },
+  "mainPosts": {
+    "js": "mainPosts.ba41424820222c5be617.min.js"
+  },
+  "vendors~appPosts": {
+    "js": "2.vendors~appPosts.347504537d412f31c256.min.js"
+  },
   "αbootstrapToc": {
-    "js": "αbootstrapToc.9834146eff4a5205ada2.min.js"
+    "js": "αbootstrapToc.83c5a410c4b5a20ba108.min.js"
   }
 }
