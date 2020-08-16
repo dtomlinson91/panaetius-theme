@@ -1,4 +1,5 @@
 import "./scss/styles.scss";
+import(/* webpackChunkName: "jQuery"*/ "jquery");
 import(/* webpackChunkName: "bootstrap" */ "bootstrap");
 
 window.addEventListener("DOMContentLoaded", async (event) => {
@@ -15,7 +16,5 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.testModal();
 });
 
-// const globalfuncs = await import(
-//   /* webpackChunkName: "exports" */ "./js/global/exports"
-// );
-// module.exports = globalfuncs.showModal;
+// import showModal from "./js/global/exports";
+// module.exports = showModal;

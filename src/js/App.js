@@ -132,7 +132,7 @@ export default {
     $("> code", element).addClass("language-none");
   },
   testModal: () => {
-    // console.log("enabling modal");
+    console.log("enabling modal");
     // $("#exampleModalCenter").modal({
     //   keyboard: false,
     //   show: false,
@@ -140,5 +140,11 @@ export default {
     // $("#modal-button").on("click", () => {
     //   $("#exampleModalCenter").modal("toggle");
     // });
+    console.log(
+      $("#exampleModalCenter").modal({
+        keyboard: false,
+        show: false,
+      })
+    );
   },
 };

@@ -16,16 +16,39 @@ module.exports = merge(common, {
   devtool: "none",
   entry: {
     mainGlobal: path.resolve(__dirname, "../src/mainGlobal.js"),
-    bootstrap: path.resolve(
-      __dirname,
-      "../node_modules/bootstrap/dist/js/bootstrap.js"
-    ),
-    // showModal: path.resolve(__dirname, "../src/js/global/exports.js"),
+    showModal: path.resolve(__dirname, "../src/js/global/exports.js"),
   },
-  // output: {
-  //   libraryTarget: "var",
-  //   library: "[name]",
-  // },
+  output: {
+    libraryTarget: "var",
+    library: "[name]",
+  },
+  module: {
+    rules: [
+      {
+        // Exposes jQuery for use outside Webpack build
+        test: require.resolve("jquery"),
+        use: [
+          {
+            loader: "expose-loader",
+            options: {
+              exposes: ["$", "jQuery"],
+            },
+          },
+        ],
+      },
+      {
+        test: require.resolve("bootstrap"),
+        use: [
+          {
+            loader: "expose-loader",
+            options: {
+              exposes: ["bootstrap"],
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
     new AssetsPlugin({
       filename: "assets.json",
