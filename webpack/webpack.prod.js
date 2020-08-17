@@ -16,11 +16,6 @@ module.exports = merge(common, {
   devtool: "none",
   entry: {
     mainGlobal: path.resolve(__dirname, "../src/mainGlobal.js"),
-    showModal: path.resolve(__dirname, "../src/js/global/exports.js"),
-  },
-  output: {
-    libraryTarget: "var",
-    library: "[name]",
   },
   module: {
     rules: [

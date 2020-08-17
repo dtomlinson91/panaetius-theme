@@ -13,5 +13,4 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.aos();
   App.scrollBar();
   App.syntaxHighlight();
-  App.testModal();
 });
