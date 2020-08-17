@@ -5,7 +5,7 @@
     "build": "webpack --config webpack.prod.js",
     "buildOldPosts": "webpack --config webpack.posts.js",
     "watch": "webpack --watch --progress --colors --config webpack.dev.js",
-    "buildMain": "gulp buildMain",
+    "buildGlobal": "gulp buildGlobal",
     "buildPosts": "gulp buildPosts"
   },
   "dependencies": {

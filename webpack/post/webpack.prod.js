@@ -7,6 +7,7 @@ module.exports = merge(common, {
   mode: "production",
   devtool: "none",
   entry: {
+    mainPosts: path.resolve(__dirname, "../../src/mainPosts.js"),
     αbootstrapToc: path.resolve(
       __dirname,
       "../../node_modules/bootstrap-toc/dist/bootstrap-toc.js"

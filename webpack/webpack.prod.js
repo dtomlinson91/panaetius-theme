@@ -15,7 +15,34 @@ module.exports = merge(common, {
   mode: "production",
   devtool: "none",
   entry: {
-    main: path.resolve(__dirname, "../src/main.js"),
+    mainGlobal: path.resolve(__dirname, "../src/mainGlobal.js"),
+  },
+  module: {
+    rules: [
+      {
+        // Exposes jQuery for use outside Webpack build
+        test: require.resolve("jquery"),
+        use: [
+          {
+            loader: "expose-loader",
+            options: {
+              exposes: ["$", "jQuery"],
+            },
+          },
+        ],
+      },
+      {
+        test: require.resolve("bootstrap"),
+        use: [
+          {
+            loader: "expose-loader",
+            options: {
+              exposes: ["bootstrap"],
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new AssetsPlugin({

@@ -36,18 +36,18 @@ module.exports = {
         test: /\.(ttf|otf)$/,
         use: ["file-loader"],
       },
-      {
-        // Exposes jQuery for use outside Webpack build
-        test: require.resolve("jquery"),
-        use: [
-          {
-            loader: "expose-loader",
-            options: {
-              exposes: ["$", "jQuery"],
-            },
-          },
-        ],
-      },
+      // {
+      //   // Exposes jQuery for use outside Webpack build
+      //   test: require.resolve("jquery"),
+      //   use: [
+      //     {
+      //       loader: "expose-loader",
+      //       options: {
+      //         exposes: ["$", "jQuery"],
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   plugins: [
@@ -57,17 +57,13 @@ module.exports = {
       sourceMap: true,
     }),
     new webpack.HashedModuleIdsPlugin(),
-    // new AssetsPlugin({
-    //   filename: "assets.json",
-    //   path: path.resolve(__dirname, "data/panaetius-theme"),
-    //   prettyPrint: true,
-    //   fullPath: false,
+    // Disabling jquery plugin provider to test global bootsrap. Requires manual adding of jquery in all files.
+    // new webpack.ProvidePlugin({
+    //   // Provides jQuery for other JS bundled with Webpack
+    //   $: "jquery",
+    //   jquery: "jquery",
+    //   // bootstrap: "bootstrap",
     // }),
-    new webpack.ProvidePlugin({
-      // Provides jQuery for other JS bundled with Webpack
-      $: "jquery",
-      jquery: "jquery",
-    }),
   ],
   optimization: {
     minimize: true,

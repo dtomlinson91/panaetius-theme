@@ -1,4 +1,5 @@
 import "./scss/styles.scss";
+import(/* webpackChunkName: "jQuery"*/ "jquery");
 import(/* webpackChunkName: "bootstrap" */ "bootstrap");
 
 window.addEventListener("DOMContentLoaded", async (event) => {
@@ -12,5 +13,4 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.aos();
   App.scrollBar();
   App.syntaxHighlight();
-  App.bootstrapTOC();
 });

@@ -1,5 +1,11 @@
 {
+  "appPosts": {
+    "js": "0.appPosts.884f7ce2f1c6baa4c074.min.js"
+  },
+  "mainPosts": {
+    "js": "mainPosts.ea8538b75d46b5be7a94.min.js"
+  },
   "αbootstrapToc": {
-    "js": "αbootstrapToc.9834146eff4a5205ada2.min.js"
+    "js": "αbootstrapToc.7d2e39e8bc1dcd20c7b6.min.js"
   }
 }
