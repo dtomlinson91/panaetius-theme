@@ -2,7 +2,6 @@
 
 export default {
   bootstrapToc: () => {
-    require("bootstrap");
     console.log("running new toc");
     // Initialise TOC
     var navSelector = "#toc";

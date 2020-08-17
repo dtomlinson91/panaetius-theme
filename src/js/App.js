@@ -132,13 +132,19 @@ export default {
     $("> code", element).addClass("language-none");
   },
   testModal: () => {
-    // console.log("enabling modal");
-    // $("#exampleModalCenter").modal({
-    //   keyboard: false,
-    //   show: false,
-    // });
+    console.log("enabling modal");
+    $("#exampleModalCenter").modal({
+      keyboard: false,
+      show: false,
+    });
     // $("#modal-button").on("click", () => {
     //   $("#exampleModalCenter").modal("toggle");
     // });
+    // console.log(
+    //   $("#exampleModalCenter").modal({
+    //     keyboard: false,
+    //     show: false,
+    //   })
+    // );
   },
 };
