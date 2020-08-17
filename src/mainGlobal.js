@@ -14,8 +14,3 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.syntaxHighlight();
   App.testModal();
 });
-
-// const globalfuncs = await import(
-//   /* webpackChunkName: "exports" */ "./js/global/exports"
-// );
-// module.exports = globalfuncs.showModal;
