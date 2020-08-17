@@ -15,6 +15,3 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.syntaxHighlight();
   App.testModal();
 });
-
-// import showModal from "./js/global/exports";
-// module.exports = showModal;
