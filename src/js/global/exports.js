@@ -1,13 +1,7 @@
-import "bootstrap";
-
 const showModal = () => {
   console.log("Show Modal pressed");
   console.log($);
-  // $("#exampleModalCenter").modal({
-  //   keyboard: false,
-  //   show: false,
-  // });
-  $("exampleModalCenter").modal("toggle");
+  $("#exampleModalCenter").modal("toggle");
 };
 
-export default showModal;
+export default { showModal: showModal };
