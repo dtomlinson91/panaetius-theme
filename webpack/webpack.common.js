@@ -1,24 +1,27 @@
 const webpack = require("webpack");
-const common = require("./webpack.common");
-const merge = require("webpack-merge");
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizer = require("optimize-css-assets-webpack-plugin");
-// const PurgeCssPlugin = require("purgecss-webpack-plugin");
-// const whitelister = require("purgecss-whitelister");
-// const glob = require("glob-all");
-// const path = require("path");
+const AssetsPlugin = require("assets-webpack-plugin");
 
-module.exports = merge(common, {
-  mode: "production",
-  devtool: "none",
+module.exports = {
+  mode: "development",
+  devtool: "source-map",
+  // entry: { main: path.resolve(__dirname, "src/main.js") },
   output: {
+    path: path.resolve(__dirname, "../static/dist"),
     filename: "[name].[contenthash].min.js",
     chunkFilename: "[id].[name].[contenthash].min.js",
     publicPath: "/dist/",
   },
   module: {
     rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -33,6 +36,18 @@ module.exports = merge(common, {
         test: /\.(ttf|otf)$/,
         use: ["file-loader"],
       },
+      // {
+      //   // Exposes jQuery for use outside Webpack build
+      //   test: require.resolve("jquery"),
+      //   use: [
+      //     {
+      //       loader: "expose-loader",
+      //       options: {
+      //         exposes: ["$", "jQuery"],
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   plugins: [
@@ -42,16 +57,12 @@ module.exports = merge(common, {
       sourceMap: true,
     }),
     new webpack.HashedModuleIdsPlugin(),
-    // new PurgeCssPlugin({
-    //   paths: glob.sync([path.join(__dirname, "layouts") + "/**/*.html"], {
-    //     nodir: true,
-    //   }),
-    //   whitelistPatterns: [/zoom/, /aos/, /table/, /thead/, /blockquote/, /img-fluid/, /code/, /highlight/],
-    //   whitelistPatternsChildren: [/code/, /highlight/],
-    //   whitelist: [
-    //     whitelister("node_modules/aos/dist/aos.css"),
-    //     whitelister("node_modules/bootstrap/dist/css/bootstrap.css")
-    //   ],
+    // Disabling jquery plugin provider to test global bootsrap. Requires manual adding of jquery in all files.
+    // new webpack.ProvidePlugin({
+    //   // Provides jQuery for other JS bundled with Webpack
+    //   $: "jquery",
+    //   jquery: "jquery",
+    //   // bootstrap: "bootstrap",
     // }),
   ],
   optimization: {
@@ -61,4 +72,4 @@ module.exports = merge(common, {
       new CssMinimizer(),
     ],
   },
-});
+};

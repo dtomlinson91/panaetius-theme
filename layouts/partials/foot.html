@@ -1,10 +1,22 @@
 {{ with index .Site.Data "panaetius-theme" }}
+<!-- site wide assets -->
 {{ range $vendor := .assets }}
 {{ if $vendor.js }}
 <script src="{{ print "dist/" $vendor.js | relURL }}"></script>
 {{ end }}
 {{ end }}
 {{ end }}
+<!-- post section assets -->
+{{ if eq .Section "post" }}
+{{ with index .Site.Data "panaetius-theme" }}
+{{ range $vendor := .assets_toc }}
+{{ if $vendor.js }}
+<script src="{{ print "dist/" $vendor.js | relURL }}"></script>
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
 {{ if .Site.Params.prismJS.enable }}
 <script>
     window.Prism = window.Prism || {};

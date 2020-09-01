@@ -9,7 +9,7 @@
 @import "admonition-icons";
 @import "cards";
 @import "fonts";
-@import "toc-marker";
 @import "code-block";
 @import "toc";
-// @import "prism";
+@import "~bootstrap-toc/dist/bootstrap-toc.css";
+@import "toc-marker";
