@@ -19,11 +19,11 @@
     {{- end -}}
     <div class="row row-cols-1 row-cols-lg-3">
         {{ range $name, $taxonomy := .Site.Taxonomies.series }}
-        <div>
+        <div class="col my-1">
             <a href="{{ $.Site.BaseURL }}series/{{ $name }}/" style="text-decoration: none;">
                 <div class="h-100 card-series">
                     {{ with $.Site.GetPage (printf "/%s" $name) }}
-                    <div class="card-body d-flex flex-column">
+                        <div class="card-body">
                         <h5 class="lead" style="margin-bottom: 0px; ">{{ .Params.Title }}</h5>
                         <p class="text-muted">
                             {{ len $taxonomy }} articles
@@ -34,7 +34,6 @@
                     </div>
                     {{ end }}
                 </div>
-        </div>
         </a>
     </div>
     {{ end }}
