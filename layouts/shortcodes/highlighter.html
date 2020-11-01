@@ -6,5 +6,5 @@
             <span class="fa fa-file-code ml-2" style="font-size:0.8em;"></span>
         </div>
     </div>
-    {{ if len .Params | eq 2 }}{{ highlight (trim .Inner "\n\r") (.Get 0) (.Get 1) }}{{ else }}{{ highlight (trim .Inner "\n\r") (.Get 0) "" }}{{ end }}
+    {{ highlight (trim .Inner "\n\r") (.Get 0) (.Get 1) }}
 </div>
