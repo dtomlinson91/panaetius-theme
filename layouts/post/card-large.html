@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center align-items-center py-md-4 card-large">
     {{ $page:= . }}
-    {{- with .Resources.Match "images/banner.svg" -}}
+    {{- with .Resources.Match "images/banner.png" -}}
     {{ range . }}
     {{- $image := . -}}
     <div class="col-md-6 card-large-image" style="background-image: url('{{ $image.RelPermalink }}');">
