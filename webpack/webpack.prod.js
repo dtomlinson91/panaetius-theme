@@ -42,6 +42,17 @@ module.exports = merge(common, {
           },
         ],
       },
+      {
+        test: require.resolve("lunr"),
+        use: [
+          {
+            loader: "expose-loader",
+            options: {
+              exposes: ["lunr"],
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -52,10 +63,7 @@ module.exports = merge(common, {
       fullPath: false,
     }),
     new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: [
-        "../static/dist/*",
-        "../data/panaetius-theme/*.json",
-      ],
+      cleanAfterEveryBuildPatterns: ["../static/dist/*", "../data/panaetius-theme/*.json"],
     }),
   ],
 });

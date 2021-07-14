@@ -1,6 +1,7 @@
 import "./scss/styles.scss";
 import(/* webpackChunkName: "jQuery"*/ "jquery");
 import(/* webpackChunkName: "bootstrap" */ "bootstrap");
+import(/* webpackChunkName: "lunr" */ "lunr");
 
 window.addEventListener("DOMContentLoaded", async (event) => {
   const { default: App } = await import(
