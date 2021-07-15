@@ -23,7 +23,6 @@
         {{ $p = $p | append $post -}}
         {{ end }}
     </div>
-    <script src="{{ print "dist/" "lunr.b93de9e9609074d666f5123e866e25ed.min.js" | relURL }}"></script>
     <script>
         const posts = JSON.parse({{$p | jsonify}});
         const query = new URLSearchParams(window.location.search);
