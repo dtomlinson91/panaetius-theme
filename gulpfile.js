@@ -9,9 +9,11 @@ function buildGlobal(cb) {
   return new Promise((resolve, reject) => {
     webpack(configs[0], (err, stats) => {
       if (err) {
+        console.log("error");
         return reject(err);
       }
       if (stats.hasErrors()) {
+        console.log("error stats");
         return reject(new Error(stats.compilation.errors.join("\n")));
       }
     });

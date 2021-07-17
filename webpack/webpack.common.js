@@ -1,4 +1,4 @@
-const webpack = require("webpack");
+// const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -25,7 +25,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          "style-loader",
+          // "style-loader",
           MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
@@ -54,9 +54,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].min.css",
       chunkFilename: "[name].[contenthash].min.css",
-      sourceMap: true,
+      // sourceMap: true,
     }),
-    new webpack.HashedModuleIdsPlugin(),
+    // new webpack.HashedModuleIdsPlugin(),
     // Disabling jquery plugin provider to test global bootsrap. Requires manual adding of jquery in all files.
     // new webpack.ProvidePlugin({
     //   // Provides jQuery for other JS bundled with Webpack

@@ -6,7 +6,7 @@ const path = require("path");
 
 module.exports = merge(common, {
   mode: "production",
-  devtool: "none",
+  devtool: false,
   entry: {
     mainGlobal: path.resolve(__dirname, "../src/mainGlobal.js"),
   },

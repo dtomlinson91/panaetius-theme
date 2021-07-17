@@ -71,22 +71,22 @@ export default {
       load_delay: 100,
     });
   },
-  navbarFade: () => {
-    let $position = $(window).scrollTop();
+  // navbarFade: () => {
+  //   let $position = $(window).scrollTop();
 
-    $(window).scroll(() => {
-      const $scroll = $(window).scrollTop();
-      const $navbarHeight = $("#navbar-main-menu.fixed-top").outerHeight();
+  //   $(window).scroll(() => {
+  //     const $scroll = $(window).scrollTop();
+  //     const $navbarHeight = $("#navbar-main-menu.fixed-top").outerHeight();
 
-      $scroll > $position ? $("#navbar-main-menu.fixed-top").css("top", -$navbarHeight) : $("#navbar-main-menu.fixed-top").css("top", 0);
+  //     $scroll > $position ? $("#navbar-main-menu.fixed-top").css("top", -$navbarHeight) : $("#navbar-main-menu.fixed-top").css("top", 0);
 
-      if ($scroll <= 0) {
-        $("#navbar-main-menu.fixed-top").css("top", 0);
-      }
+  //     if ($scroll <= 0) {
+  //       $("#navbar-main-menu.fixed-top").css("top", 0);
+  //     }
 
-      $position = $scroll;
-    });
-  },
+  //     $position = $scroll;
+  //   });
+  // },
   aos: () => {
     var AOS = require("aos");
     AOS.init({ duration: 1000, once: false, useClassNames: true });
@@ -118,5 +118,21 @@ export default {
   },
   test: () => {
     console.log("testing if webpack loads this on start, or for every page?");
+  },
+  tocbot: () => {
+    console.log("tocbot initalised")
+    var tocbot = require("tocbot");
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: ".js-toc",
+      // Where to grab the headings to build the table of contents.
+      contentSelector: ".js-toc-content",
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: "h1, h2, h3",
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+      // Offset so the title is shown.
+      headingsOffset: 30,
+    });
   },
 };

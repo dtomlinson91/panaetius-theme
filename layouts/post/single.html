@@ -52,7 +52,7 @@
                 {{- end -}}
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
-                        <div class="content">
+                        <div class="content js-toc-content">
                             {{ $page.Content }}
                         </div>
 
@@ -74,7 +74,8 @@
         <div class="col-12 col-lg-2 order-0 mb-3 mb-lg-0 ml-lg-2 d-block d-lg-block">
             <div class="sticky-top shadow-sm toc-container">
                 <p class="text-uppercase text-center text-muted pt-4">On this page</p>
-                <nav id="toc"></nav>
+                <!-- <nav id="toc"></nav> -->
+                <div class="js-toc toc"></div>
             </div>
         </div>
         <div class="col-12 col-lg-9 order-2">

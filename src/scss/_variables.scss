@@ -1,3 +1,7 @@
+@import "~bootstrap/scss/functions";
+
+$primary: #17b081;
+
 $enable-responsive-font-sizes: true;
 
 $white: #fff;
@@ -14,7 +18,7 @@ $gray-900: #082333;
 $text-gray: #343a40;
 
 // $primary: #a02f2f;
-$primary: #1563ff;
+// $primary: #1563ff;
 $secondary: #773A6B;
 
 $table-dark-color: $white;
@@ -91,3 +95,7 @@ $navbar-padding-y: 0.4rem;
 // Overrides
 
 $body-bg: #f9f9f9;
+
+
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/mixins";
