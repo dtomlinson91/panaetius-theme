@@ -1,9 +1,9 @@
 {{ define "main" }}
 <img src="/images/front-wallpaper.svg" class="front-background" alt="background image">
 <main class="homepage py-6">
-    <div class="container">
-        <div class="hero row pt-3 pt-md-6">
-            <div class="col-12 col-md-6 d-flex flex-column justify-content-center text-center text-md-left">
+    <div class="container d-flex justify-content-center">
+        <div class="hero row pt-3 pt-md-6 col-10">
+            <div class="col-12 col-md-6 d-flex flex-column justify-content-center text-center text-md-start">
                 <div>
                     <h1 class="display-4">{{ .Site.Title }}</h1>
                 </div>
@@ -14,7 +14,7 @@
                 {{- end -}}
                 <div>
                     {{- with .Site.Params.description -}}
-                    <h3 class="font-weight-normal">{{ . | safeHTML }}</h3>
+                    <h3 class="fw-normal">{{ . | safeHTML }}</h3>
                     {{- end -}}
                 </div>
             </div>
@@ -29,56 +29,64 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row d-none d-md-block">
-            {{- range first 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
-            <div class="latest d-flex py-lg-5 justify-content-center">
-                {{ .Render "card-large" }}
+    <div class="container d-flex justify-content-center">
+        <div class="col-10">
+            <div class="row d-none d-md-block">
+                {{- range first 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
+                <div class="latest d-flex py-lg-5 justify-content-center">
+                    {{ .Render "card-large" }}
+                </div>
+                {{- end -}}
             </div>
-            {{- end -}}
+            <div class="row d-block d-md-none">
+                {{- range first 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
+                <div class="latest d-flex justify-content-center py-lg-5">
+                    {{ .Render "card" }}
+                </div>
+                {{- end -}}
+            </div>
         </div>
-        <div class="row d-block d-md-none">
-            {{- range first 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
-            <div class="latest d-flex justify-content-center py-lg-5">
+    </div>
+    <div class="container d-flex justify-content-center">
+        <div class="col-10">
+            <div class="row d-flex justify-content-center justify-content-md-between align-content-between">
+                {{ range first 3 (after 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
                 {{ .Render "card" }}
+                {{ end }}
             </div>
-            {{- end -}}
         </div>
     </div>
-    <div class="container">
-        <div class="row d-flex justify-content-center justify-content-md-between align-content-between">
-            {{ range first 3 (after 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
-            {{ .Render "card" }}
-            {{ end }}
+    <div class="container d-flex justify-content-center">
+        <div class="col-10">
+            <div class="row d-none d-md-block">
+                {{- range first 1 (after 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) -}}
+                <div class="latest d-flex py-lg-5">
+                    {{ .Render "card-large" }}
+                </div>
+                {{- end -}}
+            </div>
+            <div class="row d-block d-md-none">
+                {{- range first 1 (after 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) -}}
+                <div class="latest d-flex justify-content-center py-lg-5">
+                    {{ .Render "card" }}
+                </div>
+                {{- end -}}
+            </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row d-none d-md-block">
-            {{- range first 1 (after 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) -}}
-            <div class="latest d-flex py-lg-5">
-                {{ .Render "card-large" }}
-            </div>
-            {{- end -}}
-        </div>
-        <div class="row d-block d-md-none">
-            {{- range first 1 (after 4 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) -}}
-            <div class="latest d-flex justify-content-center py-lg-5">
+    <div class="container d-flex justify-content-center">
+        <div class="col-10">
+            <div class="row d-flex justify-content-center justify-content-md-between align-content-between">
+                {{ range first 3 (after 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
                 {{ .Render "card" }}
+                {{ end }}
             </div>
-            {{- end -}}
-        </div>
-    </div>
-    <div class="container">
-        <div class="row d-flex justify-content-center justify-content-md-between align-content-between">
-            {{ range first 3 (after 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
-            {{ .Render "card" }}
-            {{ end }}
-        </div>
-        <div class="row">
-            <div class="col d-flex justify-content-center text-center pt-5">
-                <a href="/post/">
-                    <button type="button" class="btn btn-lg btn-outline-primary">See all posts</button>
-                </a>
+            <div class="row">
+                <div class="col d-flex justify-content-center text-center pt-5">
+                    <a href="/post/" style="z-index: 1;">
+                        <button type="button" class="btn btn-lg btn-outline-primary">See all posts</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

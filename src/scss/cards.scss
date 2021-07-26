@@ -7,19 +7,6 @@
 @mixin card-border {
     background-color: white;
     z-index: 1;
-    // border: 1px solid rgb(204, 18, 18);
-    // border-top-color: rgba(80, 42, 184, 0.2);
-    // border-top-style: solid;
-    // border-top-width: 1px;
-    // border-right-color: rgba(62.7%, 18.4%, 18.4%, 0.2);
-    // border-right-style: solid;
-    // border-right-width: 1px;
-    // border-bottom-color: rgba(62.7%, 18.4%, 18.4%, 0.2);
-    // border-bottom-style: solid;
-    // border-bottom-width: 1px;
-    // border-left-color: rgba(62.7%, 18.4%, 18.4%, 0.2);
-    // border-left-style: solid;
-    // border-left-width: 1px;
     border-image-source: initial;
     border-image-slice: initial;
     border-image-width: initial;
@@ -57,10 +44,9 @@
     @include card-border;
 
     & .card-large-image {
-        height: 150%;
+        height: 125%;
         @include image-zoom;
     }
-
 
 }
 
@@ -71,7 +57,7 @@
     & .card-regular-image {
         @include image-zoom;
         height: 150%;
-        background-size: initial;
+        // background-size: initial;
     }
 
     & .card-regular-image-parent {
@@ -91,8 +77,8 @@
     }
 }
 
-@media only screen and (max-width: map-get($grid-breakpoints, "md")) {
-    .card-regular-width {
-        width: 80%
-    }
-}
+// @media only screen and (max-width: map-get($grid-breakpoints, "md")) {
+//     .card-regular-width {
+//         // width: 80%
+//     }
+// }

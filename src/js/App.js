@@ -103,18 +103,18 @@ export default {
     });
   },
   syntaxHighlight: () => {
-    if (!window.Prism) {
-      return;
-    }
-    $("pre").addClass("line-numbers");
+    // if (!window.Prism) {
+    //   return;
+    // }
+    // $("pre").addClass("line-numbers");
 
-    Prism.highlightAll();
-    $("pre:has(> code[class*=language-])").removeAttr("style");
+    // Prism.highlightAll();
+    // $("pre:has(> code[class*=language-])").removeAttr("style");
 
-    const element = $("pre:has(> code:not([class*=language-]))");
+    // const element = $("pre:has(> code:not([class*=language-]))");
 
-    element.addClass("language-none");
-    $("> code", element).addClass("language-none");
+    // element.addClass("language-none");
+    // $("> code", element).addClass("language-none");
   },
   test: () => {
     console.log("testing if webpack loads this on start, or for every page?");
