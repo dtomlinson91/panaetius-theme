@@ -1,5 +1,9 @@
 @import "_variables";
-@import "~aos/dist/aos.css";
+
+@import "~bootstrap/scss/bootstrap";
+@import "aos/dist/aos.css";
+@import '~tocbot/src/scss/tocbot';
+
 @import "panaetius-theme";
 @import "sticky-footer";
 @import "search";
@@ -10,6 +14,4 @@
 @import "fonts";
 @import "code-block";
 @import "toc";
-// @import "~bootstrap-toc/dist/bootstrap-toc.css";
 @import "toc-marker";
-@import 'tocbot/src/scss/tocbot';
