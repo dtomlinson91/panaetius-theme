@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .author .name a,
 .author .social a {
     // color: $gray-900;
@@ -18,7 +20,8 @@ code {
     font-weight: 700;
 }
 
-code[class*=language-], pre[class*=language-] {
+code[class*=language-],
+pre[class*=language-] {
     font-family: $font-family-monospace !important;
     font-weight: 600;
     // color: red;
@@ -44,8 +47,8 @@ a.badge {
 }
 
 figure.highlight {
-    margin-left: -($grid-gutter-width / 2);
-    margin-right: -($grid-gutter-width / 2);
+    margin-left: - math.div($grid-gutter-width, 2);
+    margin-right: - math.div($grid-gutter-width, 2);
 
     @include media-breakpoint-up(md) {
         margin-left: 0;
@@ -100,7 +103,7 @@ a.navbar-brand {
 
 // Post page
 
-div.post-info > div > p:first-child{
+div.post-info>div>p:first-child {
     margin: 0px;
 }
 

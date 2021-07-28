@@ -9,7 +9,7 @@
                 </div>
                 {{- with .Site.Params.homepageImage -}}
                 <div class="homepage-image d-xs-block d-md-none pb-4">
-                    <img data-src="{{ . | relURL }}" class="img-fluid" data-aos="zoom-in" alt="homepage image">
+                    <img src="{{ . | relURL }}" class="img-fluid" data-aos="zoom-in" alt="homepage image">
                 </div>
                 {{- end -}}
                 <div>
@@ -21,7 +21,7 @@
             <div class="col-12 col-md-6 d-flex">
                 {{- with .Site.Params.homepageImage -}}
                 <div class="homepage-image d-none d-sm-block">
-                    <img data-src="{{ . | relURL }}" class="img-fluid" data-aos="zoom-in" alt="homepage image">
+                    <img src="{{ . | relURL }}" class="img-fluid" data-aos="zoom-in" alt="homepage image">
                 </div>
                 {{- end -}}
 

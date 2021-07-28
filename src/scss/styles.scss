@@ -1,6 +1,10 @@
+@import "~bootstrap/scss/functions";
 @import "_variables";
 
+
 @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/mixins";
+
 @import "aos/dist/aos.css";
 @import '~tocbot/src/scss/tocbot';
 
@@ -10,6 +14,7 @@
 @import "search-bar";
 @import "scroll-bar";
 @import "admonition-icons";
+@import "admonition";
 @import "cards";
 @import "fonts";
 @import "code-block";

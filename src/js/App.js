@@ -1,7 +1,6 @@
 "use strict";
-
+import AOS from "aos";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
-// import AOS from "aos";
 
 import { faBookOpen, faChevronLeft, faChevronRight, faCircle, faClock, faEnvelope, faRss, faTag, faSearch, faFileCode } from "@fortawesome/free-solid-svg-icons";
 
@@ -88,7 +87,6 @@ export default {
   //   });
   // },
   aos: () => {
-    var AOS = require("aos");
     AOS.init({ duration: 1000, once: false, useClassNames: true });
   },
   scrollBar: () => {
@@ -107,12 +105,9 @@ export default {
     //   return;
     // }
     // $("pre").addClass("line-numbers");
-
     // Prism.highlightAll();
     // $("pre:has(> code[class*=language-])").removeAttr("style");
-
     // const element = $("pre:has(> code:not([class*=language-]))");
-
     // element.addClass("language-none");
     // $("> code", element).addClass("language-none");
   },
@@ -120,7 +115,7 @@ export default {
     console.log("testing if webpack loads this on start, or for every page?");
   },
   tocbot: () => {
-    console.log("tocbot initalised")
+    console.log("tocbot initalised");
     var tocbot = require("tocbot");
     tocbot.init({
       // Where to render the table of contents.

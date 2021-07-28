@@ -9,7 +9,7 @@
             {{ range . }}
             <div class="row justify-content-center mb-3">
                 <div class="col-lg-10">
-                    <img data-src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block mt-3" alt="{{ $page.Title }}" data-aos="zoom-in">
+                    <img src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block mt-3" alt="{{ $page.Title }}" data-aos="zoom-in">
                 </div>
             </div>
             {{- end -}}
