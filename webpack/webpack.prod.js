@@ -4,6 +4,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   mode: "production",
@@ -15,7 +16,7 @@ module.exports = {
     publicPath: "/dist/",
   },
   entry: {
-    mainGlobal: path.resolve(__dirname, "../src/main.js"),
+    main: path.resolve(__dirname, "../src/main.js"),
   },
   module: {
     rules: [
@@ -55,17 +56,6 @@ module.exports = {
             loader: "expose-loader",
             options: {
               exposes: ["bootstrap"],
-            },
-          },
-        ],
-      },
-      {
-        test: require.resolve("lunr"),
-        use: [
-          {
-            loader: "expose-loader",
-            options: {
-              exposes: ["lunr"],
             },
           },
         ],
