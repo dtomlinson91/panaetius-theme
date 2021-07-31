@@ -1,16 +1,24 @@
+// bootstrap
 @import "~bootstrap/scss/functions";
 @import "_variables";
-
 
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap/scss/mixins";
 
+// animate on scroll
 @import "aos/dist/aos.css";
+
+// tocbot
 @import '~tocbot/src/scss/tocbot';
 
+// algolia docsearch
+@import '~docsearch.js/dist/cdn/docsearch.css';
+
+// local
+@import "algolia-docsearch";
 @import "panaetius-theme";
 @import "sticky-footer";
-@import "search";
+// @import "search";
 @import "search-bar";
 @import "scroll-bar";
 @import "admonition-icons";
@@ -20,3 +28,5 @@
 @import "code-block";
 @import "toc";
 @import "toc-marker";
+@import "homepage";
+@import "posts";

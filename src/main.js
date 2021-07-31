@@ -13,5 +13,5 @@ window.addEventListener("DOMContentLoaded", async (event) => {
   App.scrollBar();
   App.tocbot();
   // App.test();
-  // App.algoliaDocSearch();
+  App.algoliaDocSearch();
 });

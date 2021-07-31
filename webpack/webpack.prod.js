@@ -76,9 +76,15 @@ module.exports = {
       filename: "[name].[contenthash].min.css",
       chunkFilename: "[name].[contenthash].min.css",
     }),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
+    }),
   ],
   optimization: {
     minimize: true,
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+    splitChunks: {
+      chunks: "all",
+    },
   },
 };

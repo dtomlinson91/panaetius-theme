@@ -14,7 +14,8 @@ blockquote {
 }
 
 code {
-    background-color: $gray-100;
+    // background-color: $gray-100;
+    background-color: $dark;
     border-radius: $border-radius-sm;
     padding: .125rem .2rem;
     font-weight: 700;
@@ -76,8 +77,8 @@ footer a:not(.icons) {
 }
 
 .navbar {
-    // border-bottom: 1px solid #a02f2f;
-    border-bottom: 1px solid #2f3ba0;
+    border-bottom: 1px solid #a02f2f;
+    // border-bottom: 1px solid #2f3ba0;
 }
 
 .rotate-a-20 {
@@ -91,8 +92,8 @@ footer a:not(.icons) {
 img.front-background {
     opacity: 0.05;
     display: block;
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    height: 105%;
     object-fit: cover;
     position: fixed;
 }
@@ -109,4 +110,5 @@ div.post-info>div>p:first-child {
 
 #navbar-brand-image {
     transform: scale(-1.25, 1.25);
+    // filter: invert(75%) sepia(24%) saturate(252%) hue-rotate(156deg) brightness(84%) contrast(83%);
 }

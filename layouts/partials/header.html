@@ -1,7 +1,7 @@
 {{ $current := . }}
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" id="navbar-main-menu">
+<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top" id="navbar-main-menu">
     <div class="container">
-        <a class="navbar-brand" href="{{ .Site.BaseURL }}"><img src="/images/icons/pillar.png" height="15" class="me-2 rotate-a-20" id="navbar-brand-image" alt="site logo" />{{ .Site.Title }}</a>
+        <a class="navbar-brand" href="{{ .Site.BaseURL }}"><img src="/images/icons/Galaxy.png" height="30" class="ps-2 me-2 rotate-a-20" id="navbar-brand-image" alt="site logo" />{{ .Site.Title }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,14 +12,15 @@
                 {{- end -}}
                 {{ with .Site.Menus.main }}
                 {{ range . }}
-                <li class="nav-item{{ if or (eq $current.URL .URL) ($current.HasMenuCurrent "main" .) }} active{{ end }}">
-                    <a class="nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                <li class="nav-item">
+                    <a class="nav-link{{ if or (eq $current.URL .URL) ($current.HasMenuCurrent "main" .) }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
                 {{ end }}
                 <form class="d-flex" id="search-form" action="/search/" method="GET">
                     <div class="input-group">
-                        <input type="text" name="q" id="search" class="form-control form-control-sm" placeholder="Search">
+                        <!-- <input type="text" name="q" id="search" class="form-control form-control-sm" placeholder="Search"> -->
+                        <input type="search" id="autocomplete" class="form-control " placeholder="Search">
                         <button type="submit" id="search-button" class="btn btn-primary "> <i class="fa fa-search fa-sm"></i></button>
                     </div>
                 </form>

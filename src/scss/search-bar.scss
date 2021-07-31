@@ -1,5 +1,7 @@
 form#search-form {
     & input {
         padding-top: 6px;
+        background-color: $dark;
+        margin-left: 5px;
     }
 }

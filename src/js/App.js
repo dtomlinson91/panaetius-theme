@@ -1,7 +1,7 @@
 "use strict";
 import AOS from "aos";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
-// import docsearch from "@docsearch/js";
+import docsearch from "docsearch.js";
 
 import { faBookOpen, faChevronLeft, faChevronRight, faCircle, faClock, faEnvelope, faRss, faTag, faSearch, faFileCode } from "@fortawesome/free-solid-svg-icons";
 
@@ -122,11 +122,12 @@ export default {
   },
   algoliaDocSearch: () => {
     console.log("docsearch initalised");
-    // docsearch({
-    //   apiKey: "fc0011c6a297ab1c2c3e1d9d60f02d33",
-    //   indexName: "panaetius_blog_docsearch",
-    //   appId: "NQ5PE1DPPX",
-    //   inputSelector: "#autocomplete",
-    // });
+    docsearch({
+      apiKey: "fc0011c6a297ab1c2c3e1d9d60f02d33",
+      indexName: "panaetius_blog_docsearch",
+      appId: "NQ5PE1DPPX",
+      inputSelector: "#autocomplete",
+      // debug: true,
+    });
   },
 };

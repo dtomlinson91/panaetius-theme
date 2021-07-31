@@ -5,18 +5,19 @@
 }
 
 @mixin card-border {
-    background-color: white;
+    // background-color: white;
+    background-color: $card-background;
     z-index: 1;
     border-image-source: initial;
     border-image-slice: initial;
     border-image-width: initial;
     border-image-outset: initial;
     border-image-repeat: initial;
-    border-radius: .45rem;
-    border-top-left-radius: 0.45rem;
-    border-top-right-radius: 0.45rem;
-    border-bottom-right-radius: 0.45rem;
-    border-bottom-left-radius: 0.45rem;
+    border-radius: 1rem;
+    // border-top-left-radius: 0.45rem;
+    // border-top-right-radius: 0.45rem;
+    // border-bottom-right-radius: 0.45rem;
+    // border-bottom-left-radius: 0.45rem;
     -webkit-box-shadow: 4px 4px 36px -10px rgba(12, 45, 192, 0.15);
     -moz-box-shadow: 4px 4px 36px -10px rgba(12, 45, 192, 0.15);
     box-shadow: 4px 4px 36px -10px rgba(12, 45, 192, 0.15);
