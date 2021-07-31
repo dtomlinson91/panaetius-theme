@@ -2,8 +2,8 @@
 <main class="list container py-6">
     {{- if or .Title .Content -}}
     <div class="row py-3">
-        <div class="col">
-            {{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+        <div class="col tag-title">
+            {{ with .Title }}<h2>{{ . }}</h2>{{ end }}
             {{- with .Content -}}
             <div class="content">
                 {{ . }}

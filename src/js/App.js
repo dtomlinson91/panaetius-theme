@@ -1,7 +1,7 @@
 "use strict";
-
+import AOS from "aos";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
-// import AOS from "aos";
+import docsearch from "docsearch.js";
 
 import { faBookOpen, faChevronLeft, faChevronRight, faCircle, faClock, faEnvelope, faRss, faTag, faSearch, faFileCode } from "@fortawesome/free-solid-svg-icons";
 
@@ -88,7 +88,6 @@ export default {
   //   });
   // },
   aos: () => {
-    var AOS = require("aos");
     AOS.init({ duration: 1000, once: false, useClassNames: true });
   },
   scrollBar: () => {
@@ -102,25 +101,11 @@ export default {
       });
     });
   },
-  syntaxHighlight: () => {
-    // if (!window.Prism) {
-    //   return;
-    // }
-    // $("pre").addClass("line-numbers");
-
-    // Prism.highlightAll();
-    // $("pre:has(> code[class*=language-])").removeAttr("style");
-
-    // const element = $("pre:has(> code:not([class*=language-]))");
-
-    // element.addClass("language-none");
-    // $("> code", element).addClass("language-none");
-  },
   test: () => {
     console.log("testing if webpack loads this on start, or for every page?");
   },
   tocbot: () => {
-    console.log("tocbot initalised")
+    console.log("tocbot initalised");
     var tocbot = require("tocbot");
     tocbot.init({
       // Where to render the table of contents.
@@ -133,6 +118,16 @@ export default {
       hasInnerContainers: true,
       // Offset so the title is shown.
       headingsOffset: 30,
+    });
+  },
+  algoliaDocSearch: () => {
+    console.log("docsearch initalised");
+    docsearch({
+      apiKey: "fc0011c6a297ab1c2c3e1d9d60f02d33",
+      indexName: "panaetius_blog_docsearch",
+      appId: "NQ5PE1DPPX",
+      inputSelector: "#autocomplete",
+      // debug: true,
     });
   },
 };

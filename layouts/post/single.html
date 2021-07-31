@@ -4,12 +4,12 @@
 <main class="content-page container-fluid pt-7 pb-5">
     {{ $page := . }}
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-7 order-1 order-lg-0 shadow-lg">
+        <div class="col-12 col-lg-7 order-1 order-lg-0 shadow-lg post-content">
             {{- with .Resources.Match "images/banner.png" -}}
             {{ range . }}
             <div class="row justify-content-center mb-3">
                 <div class="col-lg-10">
-                    <img data-src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block mt-3" alt="{{ $page.Title }}" data-aos="zoom-in">
+                    <img src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block mt-3" alt="{{ $page.Title }}" data-aos="zoom-in">
                 </div>
             </div>
             {{- end -}}
@@ -23,12 +23,12 @@
                             <div class="col-6">{{ partial "authors.html" $page }}</div>
                             <div class="text-muted mb-3 d-flex flex-column justify-content-start col-6">
                                 <div>
-                                    <p class="text-muted">Posted on</p>
+                                    <p class="text-muted" style="margin-bottom: 0.2rem;">Posted on:</p>
                                 </div>
                                 <div>
                                     <p class="created text-muted text-uppercase font-weight-bold mb-1">{{ $page.Date.Format "January 2, 2006" }}</p>
-                                    <span class="mr-2"><i class="fas fa-book-open mr-2"></i>{{ $page.WordCount }} words</span>
-                                    <span><i class="fas fa-clock mr-2"></i>{{ $page.ReadingTime }} min read</span>
+                                    <span class="me-2"><i class="fas fa-book-open me-2"></i>{{ $page.WordCount }} words</span>
+                                    <span><i class="fas fa-clock me-2"></i>{{ $page.ReadingTime }} min read</span>
                                 </div>
                             </div>
                             {{/*  </div>  */}}
@@ -42,7 +42,7 @@
                     <div class="col-lg-9">
                         <div class="tags my-3">
                             {{- range . -}}
-                            <a class="badge bg-dark me-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
+                            <a class="badge bg-primary me-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
                                 <i class="fas fa-tag me-2"></i>{{ . }}
                             </a>
                             {{- end -}}
