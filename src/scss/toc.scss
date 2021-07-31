@@ -15,8 +15,14 @@ div {
     // margin-top: -1px;
     // position: absolute;
     // width: 2px;
-  }
+}
 
-  .is-active-link::before {
+.is-active-link::before {
     background-color: $secondary;
-  }
+}
+
+.toc-list {
+    & a {
+        text-decoration: none;
+    }
+}
