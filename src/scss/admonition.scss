@@ -1,79 +1,62 @@
 .notice {
+    $n: &;
+
     padding: 18px;
     line-height: 24px;
     margin-bottom: 24px;
-    // border-radius: 4px;
-    border-radius: 0.75rem;
-    color: #444;
-    background: #e7f2fa
-}
+    border: solid;
+    border-radius: $notice-border-radius;
+    color: $text-gray;
+    background: #111927;
 
-.notice p:last-child {
-    margin-bottom: 0
-}
+    & {
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
 
-.notice-title {
-    margin: -18px -18px 12px;
-    padding: 4px 18px;
-    // border-radius: 4px 4px 0 0;
-    border-top-left-radius: 0.75rem;
-    border-top-right-radius: 0.75rem;
-    font-weight: 700;
-    color: #fff;
-    background: #6ab0de
-}
+    &-title {
+        margin: -18px -18px 12px;
+        padding: 4px 18px;
+        border-top-left-radius: $notice-border-radius;
+        border-top-right-radius: $notice-border-radius;
+        font-weight: 400;
+        color: #fff;
+        background: #0D141F;
+    }
 
-.notice.warning .notice-title {
-    background: rgba(217, 83, 79, .9)
-}
+    &.info {
+        border-color: $primary
+    }
 
-.notice.warning {
-    background: #fae2e2
-}
+    &.series {
+        border-color: #663499;
+    }
 
-.notice.info .notice-title {
-    background: #f0b37e
-}
+    &.tip {
+        border-color: #609D60;
+    }
 
-.notice.info {
-    background: #fff2db
-}
+    &.warning {
+        border-color: darken($secondary, 10%);
+    }
 
-.notice.note .notice-title {
-    background: #6ab0de
-}
-
-.notice.note {
-    background: #e7f2fA
-}
-
-.notice.tip .notice-title {
-    background: rgba(92, 184, 92, .8)
-}
-
-.notice.tip {
-    background: #e6f9e6
-}
-
-.notice.series .notice-title {
-    background: #0c3484;
+    &.note {
+        border-color: #2A527A;
+    }
 }
 
 .icon-notice {
-    display: inline-flex;
-    align-self: center;
-    margin-right: 8px
-}
+    text-transform: capitalize;
 
-.icon-notice img,
-.icon-notice svg {
-    height: 1em;
-    width: 1em;
-    fill: currentColor
-}
+    & img,
+    & svg {
+        height: 1.5em;
+        width: 1.5em;
+    }
 
-.icon-notice img,
-.icon-notice.baseline svg {
-    top: 0.125em;
-    position: relative
+    & img,
+    &.baseline svg {
+        top: 0.125em;
+    }
 }

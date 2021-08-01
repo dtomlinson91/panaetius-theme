@@ -14,11 +14,14 @@ blockquote {
 }
 
 code {
-    // background-color: $gray-100;
     background-color: $dark;
     border-radius: $border-radius-sm;
     padding: .125rem .2rem;
     font-weight: 700;
+
+    .notice & {
+        background-color: darken($dark, 10%);
+    }
 }
 
 code[class*=language-],

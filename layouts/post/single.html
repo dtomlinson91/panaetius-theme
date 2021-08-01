@@ -8,7 +8,7 @@
             {{- with .Resources.Match "images/banner.png" -}}
             {{ range . }}
             <div class="row justify-content-center mb-3">
-                <div class="col-lg-10">
+                <div class="col-lg-8">
                     <img src="{{ .RelPermalink }}" class="img-fluid rounded mx-auto d-block mt-3" alt="{{ $page.Title }}" data-aos="zoom-in">
                 </div>
             </div>
