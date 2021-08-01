@@ -8,13 +8,13 @@
                     <h1 class="display-4 text-gray">{{ .Site.Title }}</h1>
                 </div>
                 {{- with .Site.Params.homepageImage -}}
-                <div class="homepage-image d-xs-block d-md-none pb-4 space-image">
+                <div class="homepage-image d-xs-block d-md-none space-image">
                     <img src="{{ . | relURL }}" class="img-fluid" data-aos="zoom-in" alt="homepage image">
                 </div>
                 {{- end -}}
                 <div>
                     {{- with .Site.Params.description -}}
-                    <h3 class="fw-normal text-gray">{{ . | safeHTML }}</h3>
+                    <h3 class="fw-normal text-gray pt-4 pt-md-0">{{ . | safeHTML }}</h3>
                     {{- end -}}
                 </div>
             </div>

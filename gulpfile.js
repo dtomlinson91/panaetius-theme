@@ -1,9 +1,9 @@
 const webpack = require("webpack");
 const webpackGlobalConfig = require("./webpack/webpack.prod");
-const webpackPostConfig = require("./webpack/post/webpack.prod");
-const gulp = require("gulp");
+// const webpackPostConfig = require("./webpack/post/webpack.prod");
+// const gulp = require("gulp");
 
-configs = [webpackGlobalConfig, webpackPostConfig];
+configs = [webpackGlobalConfig];
 
 function buildGlobal(cb) {
   return new Promise((resolve, reject) => {
