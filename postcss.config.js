@@ -1,5 +1,3 @@
 module.exports = {
-  plugins: function () {
-    return [require("autoprefixer")];
-  },
+  plugins: [require("autoprefixer")],
 };
