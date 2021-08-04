@@ -1,7 +1,8 @@
 "use strict";
 
 import AOS from "aos";
-import docsearch from "docsearch.js";
+// import docsearch from "docsearch.js";
+import docsearch from "@docsearch/js";
 
 import(/* webpackChunkName: "jQuery"*/ "jquery");
 
@@ -109,12 +110,19 @@ export default {
     });
   },
   algoliaDocSearch: () => {
-    console.log("docsearch initalised");
+    //   console.log("docsearch initalised");
+    //   docsearch({
+    //     apiKey: process.env.ALGOLIA_API_KEY,
+    //     indexName: "panaetius_blog_docsearch",
+    //     appId: process.env.ALGOLIA_APPLICATION_ID,
+    //     inputSelector: "#autocomplete",
+    //     // debug: true,
+    //   });
     docsearch({
       apiKey: process.env.ALGOLIA_API_KEY,
       indexName: "panaetius_blog_docsearch",
       appId: process.env.ALGOLIA_APPLICATION_ID,
-      inputSelector: "#autocomplete",
+      container: "#autocomplete",
       // debug: true,
     });
   },

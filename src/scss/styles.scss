@@ -12,13 +12,12 @@
 @import '~tocbot/src/scss/tocbot';
 
 // algolia docsearch
-@import '~docsearch.js/dist/cdn/docsearch.css';
+@import "~@docsearch/css";
+@import "docsearch-alpha";
 
 // local
-@import "algolia-docsearch";
 @import "panaetius-theme";
 @import "sticky-footer";
-// @import "search";
 @import "search-bar";
 @import "scroll-bar";
 @import "admonition-icons";
@@ -31,3 +30,7 @@
 @import "homepage";
 @import "posts";
 @import "commento"
+
+// retired
+// @import "search";
+// @import "algolia-docsearch";
