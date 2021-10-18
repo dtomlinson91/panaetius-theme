@@ -8,7 +8,7 @@
 <div class="notice {{ $noticeType }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>
     <p class="first notice-title">
         <span class="icon-notice baseline">
-            <img src="/images/icons/{{ $noticeType }}_icon.svg" class="me-2">{{- $noticeType -}}
+            <img src="/images/icons/{{ $noticeType }}_icon.svg" class="me-2" alt="admonition icon">{{- $noticeType -}}
         </span>
     </p>
     {{- if or $block (not $raw) }}{{ $raw }}{{ else }}<p>{{ $raw }}</p> {{ end -}}
