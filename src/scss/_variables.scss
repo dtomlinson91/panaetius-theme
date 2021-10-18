@@ -1,4 +1,23 @@
-$enable-responsive-font-sizes: true;
+// Main colours
+$primary: #4338C9;
+$secondary:#CC0000;
+
+$light: #202c41;
+$dark: #111927;
+
+$body-bg: $dark;
+
+// Cards
+
+$card-background: #3B3951;
+$post-background: lighten($dark, 4%);
+
+// Notice
+
+$notice-border-radius: 0.5rem;
+
+
+// Theme colours
 
 $white: #fff;
 $gray-100: #e9edf0;
@@ -11,33 +30,29 @@ $gray-700: #264d61;
 $gray-800: #0c344b;
 $gray-900: #082333;
 
-$text-gray: #343a40;
-
-// $primary: #a02f2f;
-$primary: #1563ff;
-$secondary: #773A6B;
+$text-gray: $gray-200;
 
 $table-dark-color: $white;
 $table-dark-bg: $primary;
 
-
-
 $text-muted: $gray-400;
+
 $body-color: $text-gray;
-$light: $white;
-// $dark: $gray-900;
-$dark: #0c3484;
+
 $headings-color: $text-gray;
 $headings-font-family: "Rotunda",
 sans-serif;
 $headings-font-weight: 500;
 
-// $nav-link-disabled-color: $text-gray;
-// $nav-tabs-link-active-color: $text-gray;
+$nav-link-disabled-color: $text-gray;
+$nav-tabs-link-active-color: $text-gray;
 $navbar-light-color: $text-gray;
-$navbar-light-hover-color: $primary;
-$navbar-light-active-color: $primary;
+$navbar-light-hover-color: $gray-100;
+$navbar-light-active-color: $white;
 
+// Fonts
+
+$enable-responsive-font-sizes: true;
 $font-family-sans-serif: "Rotunda",
 sans-serif;
 $font-family-monospace: "Realtime",
@@ -47,11 +62,11 @@ serif;
 
 $font-weight-normal: 400;
 $font-weight-base: 400;
-
 $code-font-size: 100%;
 
-$link-color: $primary;
-$link-decoration: none;
+$link-color: $white;
+$link-decoration: underline;
+$link-hover-color: lighten($link-color, 15%);
 
 $font-size-base: 1.125rem;
 
@@ -84,10 +99,11 @@ $border-radius-sm: 0.3rem;
 $blockquote-font-size: $font-size-base;
 
 $code-color: $body-color;
+// $gray-100
 $navbar-brand-font-size: 1rem;
 $navbar-nav-link-padding-x: 1.25rem;
 $navbar-padding-y: 0.4rem;
 
 // Overrides
 
-$body-bg: #f9f9f9;
+// $body-bg: #f9f9f9;

@@ -1,26 +1,11 @@
-// li#nav-search {
 form#search-form {
-    margin-top: 2px;
-
     & input {
-        width: 79%;
-        padding-top: 10px;
-    }
+        padding-top: 6px;
+        background-color: $dark;
+        margin-left: 5px;
 
-    & button {
-        margin-left: -5px;
-        height: calc(1.5em + .5rem - 1px);
-
-        & .fa-search {
-            margin-bottom: 2px !important;
+        &.form-control {
+            border: 1px solid $primary;
         }
     }
-}
-
-form.form-single {
-    width: 80% !important;
-}
-
-.input-group {
-    width: 20% !important;
 }

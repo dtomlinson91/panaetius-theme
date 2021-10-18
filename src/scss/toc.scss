@@ -1,13 +1,28 @@
 div {
     &.toc-container {
-        // top: 56px;
         top: 99px;
-        background-color: white;
+        background-color: $post-background;
         z-index: 0;
     }
+}
 
-    &.toc-contents {
-        padding-left: 10px;
-        // z-index: 1;
+.toc-link::before {
+    background-color: $gray-200;
+    // content: ' ';
+    // display: inline-block;
+    // height: inherit;
+    // left: 0;
+    // margin-top: -1px;
+    // position: absolute;
+    // width: 2px;
+}
+
+.is-active-link::before {
+    background-color: $secondary;
+}
+
+.toc-list {
+    & a {
+        text-decoration: none;
     }
 }
