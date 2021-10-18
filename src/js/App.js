@@ -1,20 +1,13 @@
 "use strict";
 
-import { library, dom } from "@fortawesome/fontawesome-svg-core";
-// import AOS from "aos";
+import AOS from "aos";
+import docsearch from "docsearch.js";
 
-import {
-  faBookOpen,
-  faChevronLeft,
-  faChevronRight,
-  faCircle,
-  faClock,
-  faEnvelope,
-  faRss,
-  faTag,
-  faSearch,
-  faFileCode,
-} from "@fortawesome/free-solid-svg-icons";
+import(/* webpackChunkName: "jQuery"*/ "jquery");
+
+import { library, dom } from "@fortawesome/fontawesome-svg-core";
+import { Collapse } from "bootstrap";
+import { faBookOpen, faChevronLeft, faChevronRight, faCircle, faClock, faEnvelope, faRss, faTag, faSearch, faFileCode } from "@fortawesome/free-solid-svg-icons";
 
 import {
   faFacebook,
@@ -76,34 +69,13 @@ export default {
     $(".content figure > img").addClass("img-fluid");
   },
   lazyload: async () => {
-    const { default: LazyLoad } = await import(
-      /* webpackChunkName: "lazyload" */ "vanilla-lazyload"
-    );
+    const { default: LazyLoad } = await import(/* webpackChunkName: "lazyload" */ "vanilla-lazyload");
     new LazyLoad({
       thresholds: "40px 10%",
       load_delay: 100,
     });
   },
-  navbarFade: () => {
-    let $position = $(window).scrollTop();
-
-    $(window).scroll(() => {
-      const $scroll = $(window).scrollTop();
-      const $navbarHeight = $("#navbar-main-menu.fixed-top").outerHeight();
-
-      $scroll > $position
-        ? $("#navbar-main-menu.fixed-top").css("top", -$navbarHeight)
-        : $("#navbar-main-menu.fixed-top").css("top", 0);
-
-      if ($scroll <= 0) {
-        $("#navbar-main-menu.fixed-top").css("top", 0);
-      }
-
-      $position = $scroll;
-    });
-  },
   aos: () => {
-    var AOS = require("aos");
     AOS.init({ duration: 1000, once: false, useClassNames: true });
   },
   scrollBar: () => {
@@ -117,18 +89,33 @@ export default {
       });
     });
   },
-  syntaxHighlight: () => {
-    if (!window.Prism) {
-      return;
-    }
-    $("pre").addClass("line-numbers");
-
-    Prism.highlightAll();
-    $("pre:has(> code[class*=language-])").removeAttr("style");
-
-    const element = $("pre:has(> code:not([class*=language-]))");
-
-    element.addClass("language-none");
-    $("> code", element).addClass("language-none");
+  test: () => {
+    console.log("testing if webpack loads this on start, or for every page?");
+  },
+  tocbot: () => {
+    console.log("tocbot initalised");
+    var tocbot = require("tocbot");
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: ".js-toc",
+      // Where to grab the headings to build the table of contents.
+      contentSelector: ".js-toc-content",
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: "h1, h2, h3",
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+      // Offset so the title is shown.
+      headingsOffset: 30,
+    });
+  },
+  algoliaDocSearch: () => {
+    console.log("docsearch initalised");
+    docsearch({
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: "panaetius_blog_docsearch",
+      appId: process.env.ALGOLIA_APPLICATION_ID,
+      inputSelector: "#autocomplete",
+      // debug: true,
+    });
   },
 };

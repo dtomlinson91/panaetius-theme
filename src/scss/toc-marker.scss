@@ -1,32 +1,32 @@
-// Adds offset to the headers in the post content to ignore the navbar height (avoids underscroll).
-:target[id]:before {
-    content: '';
-    display: block;
-    height: 58px;
-    margin: -30px 0 0;
-}
+// // Adds offset to the headers in the post content to ignore the navbar height (avoids underscroll).
+// :target[id]:before {
+//     content: '';
+//     display: block;
+//     height: 58px;
+//     margin: -30px 0 0;
+// }
 
-nav[data-toggle=toc] {
-    & .nav-link.active {
-        color: $primary;
-        border-left: 2px solid $primary;
-    }
-}
+// nav[data-toggle=toc] {
+//     & .nav-link.active {
+//         color: $primary;
+//         border-left: 2px solid $primary;
+//     }
+// }
 
-nav[data-toggle="toc"] .nav>li>a:hover,
-nav[data-toggle="toc"] .nav>li>a:focus {
-    padding-left: 19px;
-    color: $primary;
-    text-decoration: none;
-    background-color: transparent;
-    border-left: 1px solid $primary;
-}
+// nav[data-toggle="toc"] .nav>li>a:hover,
+// nav[data-toggle="toc"] .nav>li>a:focus {
+//     padding-left: 19px;
+//     color: $primary;
+//     text-decoration: none;
+//     background-color: transparent;
+//     border-left: 1px solid $primary;
+// }
 
-nav[data-toggle="toc"] .nav-link.active:hover,
-nav[data-toggle="toc"] .nav-link.active:focus {
-    padding-left: 18px;
-    font-weight: bold;
-    color: $dark;
-    background-color: transparent;
-    border-left: 2px solid $dark;
-}
+// nav[data-toggle="toc"] .nav-link.active:hover,
+// nav[data-toggle="toc"] .nav-link.active:focus {
+//     padding-left: 18px;
+//     font-weight: bold;
+//     color: $dark;
+//     background-color: transparent;
+//     border-left: 2px solid $dark;
+// }

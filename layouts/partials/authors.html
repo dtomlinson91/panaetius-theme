@@ -1,18 +1,17 @@
 {{- if .Params.authors -}}
 <ul class="authors list-inline">
-    <p class="text-muted">Written by</p>
-    <!-- <br> -->
+    <p class="text-muted" style="margin-bottom: 0.2rem;">Written by:</p>
     {{- range .Params.authors -}}
     {{- with $.Site.GetPage (printf "/authors/%s" (. | urlize)) -}}
     {{- $term := . -}}
-    <li class="list-inline-item mr-3">
-        <div class="media author">
+    <li class="list-inline-item me-3">
+        <div class="media author d-flex">
             {{- if $term.Params.images -}}
             {{- with .Resources.GetMatch (index $term.Params.images 0) -}}
             {{- $image := .Resize "64x" -}}
             {{- $2ximage := .Resize "128x q100" -}}
             {{- $3ximage := .Resize "192x q100" -}}
-            <a href="{{ $term.RelPermalink }}" class="mr-3">
+            <a href="{{ $term.RelPermalink }}" class="me-3">
                 <picture>
                     <source srcset="{{ $image.RelPermalink }} 1x, {{ $2ximage.RelPermalink }} 2x, {{ $3ximage.RelPermalink }} 3x">
                     <img src="{{ $image.RelPermalink }}" class="rounded-circle" alt="{{ $term.Params.name }}">
@@ -20,7 +19,7 @@
             </a>
             {{- end -}}
             {{- end -}}
-            <div class="media-body">
+            <div class="media-body ">
                 <h5 class="name my-0">
                     {{ range $term.Params.name }}
                     {{ $name := . }}

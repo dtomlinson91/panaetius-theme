@@ -1,9 +1,11 @@
 .line-scroll {
-    background-image: linear-gradient(90deg, #1563ff 1.56%, #08368b);
+    // background-image: linear-gradient(90deg, #1563ff 1.56%, #08368b);
+    background-color: $secondary;
     height: 3px;
     left: 0;
     top: 56px;
     position: fixed;
     width: 0;
     z-index: 10;
+    padding-bottom: $navbar-padding-y + 0.2rem;
 }

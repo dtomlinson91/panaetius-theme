@@ -1,0 +1,62 @@
+.notice {
+    $n: &;
+
+    padding: 18px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    border: solid;
+    border-radius: $notice-border-radius;
+    color: $text-gray;
+    background: #111927;
+
+    & {
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-title {
+        margin: -18px -18px 12px;
+        padding: 4px 18px;
+        border-top-left-radius: $notice-border-radius;
+        border-top-right-radius: $notice-border-radius;
+        font-weight: 400;
+        color: #fff;
+        background: #0D141F;
+    }
+
+    &.info {
+        border-color: $primary
+    }
+
+    &.series {
+        border-color: #663499;
+    }
+
+    &.tip {
+        border-color: #609D60;
+    }
+
+    &.warning {
+        border-color: darken($secondary, 10%);
+    }
+
+    &.note {
+        border-color: #2A527A;
+    }
+}
+
+.icon-notice {
+    text-transform: capitalize;
+
+    & img,
+    & svg {
+        height: 1.5em;
+        width: 1.5em;
+    }
+
+    & img,
+    &.baseline svg {
+        top: 0.125em;
+    }
+}

@@ -1,17 +1,14 @@
 <div class="d-flex justify-content-center align-items-center py-md-4 card-large">
     {{ $page:= . }}
-    {{- with .Resources.Match "images/banner.svg" -}}
+    {{- with .Resources.Match "images/banner.png" -}}
     {{ range . }}
     {{- $image := . -}}
     <div class="col-md-6 card-large-image" style="background-image: url('{{ $image.RelPermalink }}');">
-        <!-- <a href="{{ $page.RelPermalink }}" class="d-block">
-            <img data-src="{{ $image.RelPermalink }}" class="" alt="{{ $page.Title }}" data-aos="zoom-in" style="">
-        </a> -->
         <div style="background-image: url('{{ $image.RelPermalink }}')"></div>
         {{- end -}}
         {{- end -}}
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 px-md-3">
         <div class="d-flex justify-content-between align-items-start">
             <h5 class="created text-muted text-uppercase font-weight-bold">{{ $page.Date.Format "January 2, 2006" }}</h5>
             <p class="text-muted">{{ $page.ReadingTime }} min read</p>
@@ -26,8 +23,8 @@
             <div class="d-flex justify-content-start">
                 <div class="tags">
                     {{- range . -}}
-                    <a class="badge badge-dark mr-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
-                        <i class="fas fa-tag mr-2"></i>{{ . }}
+                    <a class="badge bg-dark me-2" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
+                        <i class="fas fa-tag me-2"></i>{{ . }}
                     </a>
                     {{- end -}}
                 </div>
