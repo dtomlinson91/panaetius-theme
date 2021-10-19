@@ -23,10 +23,11 @@
                             <div class="col-6">{{ partial "authors.html" $page }}</div>
                             <div class="text-muted mb-3 d-flex flex-column justify-content-start col-6">
                                 <div>
-                                    <p class="text-muted" style="margin-bottom: 0.2rem;">Posted on:</p>
+                                    <p class="created text-muted font-weight-bold mb-1">Posted: {{ $page.Date.Format "January 2, 2006" }}</p>
+                                    <p class="created text-muted font-weight-bold mb-1" style="margin-bottom: 0.2rem;">Updated: {{ $page.Lastmod.Format "January 2, 2006" }}
+                                    </p>
                                 </div>
                                 <div>
-                                    <p class="created text-muted text-uppercase font-weight-bold mb-1">{{ $page.Date.Format "January 2, 2006" }}</p>
                                     <span class="me-2"><i class="fas fa-book-open me-2"></i>{{ $page.WordCount }} words</span>
                                     <span><i class="fas fa-clock me-2"></i>{{ $page.ReadingTime }} min read</span>
                                 </div>
